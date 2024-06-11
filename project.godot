@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="ProyectoDEU"
-run/main_scene="res://scripts/player.gd.tscn"
+config/description="Un juego para aprender a recorrer la facultad de informatica, UNLP."
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
