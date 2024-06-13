@@ -2,9 +2,9 @@ extends Node
  
 var current_scene = "entrada_facu"
 var transition_scene = false
-var transition_to = "none"
+var transition_to = "entrada_facu"
+var change_camera = false
 
-var player_exit_transition_posx = 0
-var player_exit_transition_posy = 0
-var player_enter_posx = 0
-var player_enter_posy = 0
+#(311, 619) position default for "entrada_facu" start
+var player_transition_posx = 311
+var player_transition_posy = 619

@@ -26,7 +26,14 @@ polygon = PackedVector2Array(30, 1, 192, 0, 193, 112, 111, 112, 112, 509, 575, 5
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_p5rqs")]
-position = Vector2(774, 635)
+position = Vector2(689, 647)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(710, 527)
+limit_left = -40
+limit_top = 6
+limit_right = 1620
+limit_bottom = 1020
 
 [node name="Pasillo1_transition" type="Area2D" parent="."]
 
