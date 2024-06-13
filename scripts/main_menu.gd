@@ -8,7 +8,7 @@ func _ready():
 	$VBoxContainer/quit_button.connect("pressed", Callable(self, "_on_quit_button_pressed"))
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/test_world.tscn")
+	get_tree().change_scene_to_file("res://scenes/entrada_facu.tscn")
 
 func _on_options_button_pressed():
 	pass

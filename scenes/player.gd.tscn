@@ -1,7 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://5anhx7il2irw"]
+[gd_scene load_steps=41 format=3 uid="uid://5anhx7il2irw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uaxqb"]
 [ext_resource type="Texture2D" uid="uid://c8akyrglba21q" path="res://art/character/player.png" id="2_0shyb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6bmg"]
+radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhecx"]
 atlas = ExtResource("2_0shyb")
@@ -292,8 +295,22 @@ animations = [{
 script = ExtResource("1_uaxqb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_l6bmg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -25)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nvmho")
-animation = &"back_idle"
-frame_progress = 0.0721866
+animation = &"front_idle"
+
+[node name="Camera2D_Entrada" type="Camera2D" parent="."]
+position = Vector2(0, -9)
+enabled = false
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 600
+limit_bottom = 650
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
