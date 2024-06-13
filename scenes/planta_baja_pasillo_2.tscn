@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://clvnfqsvye4pl"]
+[gd_scene load_steps=6 format=3 uid="uid://clvnfqsvye4pl"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_n5ajw"]
+[ext_resource type="Script" path="res://scripts/planta_baja_pasillo_2.gd" id="1_vkjf8"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_bbc7y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juw2b"]
+size = Vector2(81, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfoy"]
+size = Vector2(107, 63.625)
+
 [node name="planta_baja_pasillo_2" type="Node2D"]
+script = ExtResource("1_vkjf8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_n5ajw")
@@ -26,3 +34,28 @@ polygon = PackedVector2Array(174, 79, 272, 77, 271, -1, 368, 1, 369, 77, 1007, 7
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_bbc7y")]
 position = Vector2(2050, 127)
+
+[node name="Entrada_transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada_transition"]
+position = Vector2(2137.5, 120.5)
+shape = SubResource("RectangleShape2D_juw2b")
+
+[node name="Patio_transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Patio_transition"]
+position = Vector2(324, 31)
+shape = SubResource("RectangleShape2D_pvfoy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Patio_transition"]
+position = Vector2(1056, 31.375)
+shape = SubResource("RectangleShape2D_pvfoy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Patio_transition"]
+position = Vector2(1913, 31.8125)
+shape = SubResource("RectangleShape2D_pvfoy")
+
+[connection signal="body_entered" from="Entrada_transition" to="." method="_on_entrada_transition_body_entered"]
+[connection signal="body_exited" from="Entrada_transition" to="." method="_on_entrada_transition_body_exited"]
+[connection signal="body_entered" from="Patio_transition" to="." method="_on_patio_transition_body_entered"]
+[connection signal="body_exited" from="Patio_transition" to="." method="_on_patio_transition_body_exited"]

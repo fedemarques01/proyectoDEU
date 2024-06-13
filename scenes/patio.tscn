@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=5 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
+[ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_p5rqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28p1q"]
-size = Vector2(116, 78.75)
+size = Vector2(167.938, 100.531)
 
 [node name="patio" type="Node2D"]
+script = ExtResource("1_mygvj")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_cgmb4")
@@ -26,12 +28,31 @@ polygon = PackedVector2Array(30, 1, 192, 0, 193, 112, 111, 112, 112, 509, 575, 5
 [node name="player" parent="Entity_container" instance=ExtResource("2_p5rqs")]
 position = Vector2(774, 635)
 
-[node name="Patio_transicion" type="Area2D" parent="."]
+[node name="Pasillo1_transition" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Patio_transicion"]
-position = Vector2(905, 37.625)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pasillo1_transition"]
+position = Vector2(912, 43)
 shape = SubResource("RectangleShape2D_28p1q")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Patio_transicion"]
-position = Vector2(112.188, 57.25)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pasillo1_transition"]
+position = Vector2(112.031, 58.4688)
 shape = SubResource("RectangleShape2D_28p1q")
+
+[node name="Pasillo2_transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pasillo2_transition"]
+position = Vector2(689, 971)
+shape = SubResource("RectangleShape2D_28p1q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pasillo2_transition"]
+position = Vector2(86, 970)
+shape = SubResource("RectangleShape2D_28p1q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pasillo2_transition"]
+position = Vector2(1469, 973.266)
+shape = SubResource("RectangleShape2D_28p1q")
+
+[connection signal="body_entered" from="Pasillo1_transition" to="." method="_on_pasillo_1_transition_body_entered"]
+[connection signal="body_exited" from="Pasillo1_transition" to="." method="_on_pasillo_1_transition_body_exited"]
+[connection signal="body_entered" from="Pasillo2_transition" to="." method="_on_pasillo_2_transition_body_entered"]
+[connection signal="body_exited" from="Pasillo2_transition" to="." method="_on_pasillo_2_transition_body_exited"]
