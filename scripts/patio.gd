@@ -1,22 +1,27 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
+func _ready():
+	$Entity_container/player.position.x = global.player_transition_posx
+	$Entity_container/player.position.y = global.player_transition_posy
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	change_scene()
 
 
+#en caso de cambiar de escena, busco la escena y seteo la current_scene en global
 func change_scene():
 	if global.transition_scene:
 		var filename = "res://scenes/" + global.transition_to + ".tscn"
 		get_tree().change_scene_to_file(filename)
 		global.current_scene = global.transition_to
-		global.transition_to = "none"
 
-
+#en caso de colisionar con el trigger de transicion, se cambia la escena
 func _on_pasillo_1_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_1"
+		calculate_pos_transition_pasillo_1()
 		global.transition_scene = true
 
 func _on_pasillo_1_transition_body_exited(body):
@@ -27,8 +32,26 @@ func _on_pasillo_1_transition_body_exited(body):
 func _on_pasillo_2_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_2"
+		calculate_pos_transition_pasillo_2()
 		global.transition_scene = true
 
 func _on_pasillo_2_transition_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
+
+
+func calculate_pos_transition_pasillo_2():
+	if $Entity_container/player.position.x < 500:
+		global.player_transition_posx = 326
+	elif $Entity_container/player.position.x < 1000:
+		global.player_transition_posx = 1054
+	else:
+		global.player_transition_posx = 1915
+	global.player_transition_posy = 115
+
+func calculate_pos_transition_pasillo_1():
+	if $Entity_container/player.position.x < 500:
+		global.player_transition_posx = 369
+	else:
+		global.player_transition_posx = 1077
+	global.player_transition_posy = 180

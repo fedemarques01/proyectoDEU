@@ -307,7 +307,7 @@ animation = &"front_idle"
 [node name="Cameras" type="Node2D" parent="."]
 
 [node name="Camera2D_entrada_facu" type="Camera2D" parent="Cameras"]
-position = Vector2(3, -4)
+position = Vector2(0, -9)
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
@@ -318,7 +318,6 @@ drag_vertical_enabled = true
 
 [node name="Camera2D_planta_baja_pasillo_1" type="Camera2D" parent="Cameras"]
 position = Vector2(0, -18)
-enabled = false
 zoom = Vector2(2, 2)
 limit_left = 160
 limit_top = 0
@@ -329,7 +328,6 @@ drag_vertical_enabled = true
 
 [node name="Camera2D_planta_baja_pasillo_2" type="Camera2D" parent="Cameras"]
 position = Vector2(0, -36)
-enabled = false
 zoom = Vector2(2, 2)
 limit_left = 150
 limit_top = -40
@@ -339,12 +337,11 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Camera2D_patio" type="Camera2D" parent="Cameras"]
-position = Vector2(10, 84)
-enabled = false
+position = Vector2(0, -72)
 zoom = Vector2(2, 2)
 limit_left = -40
 limit_top = 6
-limit_right = 1580
+limit_right = 1620
 limit_bottom = 1020
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

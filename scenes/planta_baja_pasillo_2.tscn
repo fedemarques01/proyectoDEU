@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_bbc7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juw2b"]
-size = Vector2(81, 91)
+size = Vector2(72, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfoy"]
 size = Vector2(107, 63.625)
@@ -33,12 +33,19 @@ polygon = PackedVector2Array(174, 79, 272, 77, 271, -1, 368, 1, 369, 77, 1007, 7
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_bbc7y")]
-position = Vector2(2050, 127)
+position = Vector2(1464, 132)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2113, 245)
+limit_left = 150
+limit_top = -40
+limit_right = 2110
+limit_bottom = 370
 
 [node name="Entrada_transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada_transition"]
-position = Vector2(2137.5, 120.5)
+position = Vector2(2142, 120.5)
 shape = SubResource("RectangleShape2D_juw2b")
 
 [node name="Patio_transition" type="Area2D" parent="."]
