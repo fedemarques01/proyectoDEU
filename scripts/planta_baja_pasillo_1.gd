@@ -9,7 +9,6 @@ func _ready():
 func _process(delta):
 	change_scene()
 
-
 #en caso de cambiar de escena, busco la escena y seteo la current_scene en global
 func change_scene():
 	if global.transition_scene:
@@ -32,10 +31,17 @@ func _on_entrada_transition_body_exited(body):
 func _on_patio_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "patio"
-		global.player_transition_posx = 915
-		global.player_transition_posy = 136
+		calculate_pos_transition_patio()
 		global.transition_scene = true
 
 func _on_patio_transition_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
+
+
+func calculate_pos_transition_patio():
+	if $Entity_container/player.position.x > 700:
+		global.player_transition_posx = 911
+	else:
+		global.player_transition_posx = 70
+	global.player_transition_posy = 160

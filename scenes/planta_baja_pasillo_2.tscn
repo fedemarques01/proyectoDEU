@@ -33,7 +33,7 @@ polygon = PackedVector2Array(174, 79, 272, 77, 271, -1, 368, 1, 369, 77, 1007, 7
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_bbc7y")]
-position = Vector2(1455, 142)
+position = Vector2(1464, 132)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2113, 245)

@@ -32,11 +32,18 @@ func _on_entrada_transition_body_exited(body):
 func _on_patio_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "patio"
-		global.player_transition_posx = 685
-		global.player_transition_posy = 868
+		calculate_pos_transition_patio()
 		global.transition_scene = true
 
 func _on_patio_transition_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
 
+func calculate_pos_transition_patio():
+	if $Entity_container/player.position.x < 500:
+		global.player_transition_posx = 72
+	elif $Entity_container/player.position.x < 1500:
+		global.player_transition_posx = 685
+	else:
+		global.player_transition_posx = 1466
+	global.player_transition_posy = 874

@@ -30,7 +30,7 @@ polygon = PackedVector2Array(253, 78, 431, 78, 1023, 78, 1024, 15, 1135, 15, 113
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_dri6r")]
-position = Vector2(1365, 125)
+position = Vector2(1217, 121)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1031, 108)
@@ -51,7 +51,7 @@ position = Vector2(1081.5, 262)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Patio_transition"]
-position = Vector2(393.375, 278)
+position = Vector2(374, 280)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [connection signal="body_entered" from="Entrada_transition" to="." method="_on_entrada_transition_body_entered"]

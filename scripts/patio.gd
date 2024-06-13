@@ -21,8 +21,7 @@ func change_scene():
 func _on_pasillo_1_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_1"
-		global.player_transition_posx = 1081
-		global.player_transition_posy = 178
+		calculate_pos_transition_pasillo_1()
 		global.transition_scene = true
 
 func _on_pasillo_1_transition_body_exited(body):
@@ -33,10 +32,26 @@ func _on_pasillo_1_transition_body_exited(body):
 func _on_pasillo_2_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_2"
-		global.player_transition_posx = 1063
-		global.player_transition_posy = 122
+		calculate_pos_transition_pasillo_2()
 		global.transition_scene = true
 
 func _on_pasillo_2_transition_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
+
+
+func calculate_pos_transition_pasillo_2():
+	if $Entity_container/player.position.x < 500:
+		global.player_transition_posx = 326
+	elif $Entity_container/player.position.x < 1000:
+		global.player_transition_posx = 1054
+	else:
+		global.player_transition_posx = 1915
+	global.player_transition_posy = 115
+
+func calculate_pos_transition_pasillo_1():
+	if $Entity_container/player.position.x < 500:
+		global.player_transition_posx = 369
+	else:
+		global.player_transition_posx = 1077
+	global.player_transition_posy = 180
