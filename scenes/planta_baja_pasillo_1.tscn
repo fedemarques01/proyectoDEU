@@ -33,7 +33,7 @@ polygon = PackedVector2Array(253, 78, 431, 78, 1023, 78, 1024, 15, 1135, 15, 113
 position = Vector2(1217, 121)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1031, 108)
+position = Vector2(1332, 91)
 limit_left = 160
 limit_right = 2150
 limit_bottom = 316
@@ -45,6 +45,7 @@ position = Vector2(2187.81, 120)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [node name="Patio_transition" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Patio_transition"]
 position = Vector2(1081.5, 262)

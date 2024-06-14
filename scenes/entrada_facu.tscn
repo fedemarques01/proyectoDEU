@@ -37,12 +37,14 @@ polygon = PackedVector2Array(482, 252, 510, 251, 510, 318, 480, 319)
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_6c82k")]
-position = Vector2(311, 619)
+position = Vector2(257, 378)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(305, 372)
-limit_right = 600
-limit_bottom = 650
+position = Vector2(276, 199)
+limit_left = -30
+limit_top = -85
+limit_right = 650
+limit_bottom = 733
 
 [node name="PB_Pasillo1_transition" type="Area2D" parent="."]
 position = Vector2(95, 138)
@@ -54,7 +56,7 @@ shape = SubResource("RectangleShape2D_4vti4")
 [node name="PB_pasillo2_transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PB_pasillo2_transition"]
-position = Vector2(-30.5, 487)
+position = Vector2(-32, 487)
 shape = SubResource("RectangleShape2D_xto5b")
 
 [connection signal="body_entered" from="PB_Pasillo1_transition" to="." method="_on_pb_pasillo_1_transition_body_entered"]
