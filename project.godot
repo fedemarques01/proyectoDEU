@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 global="*res://scripts/global.gd"
+InteractionManager="*res://scenes/interactions/InteractionManager.tscn"
 
 [input]
 
