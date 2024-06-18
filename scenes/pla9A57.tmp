@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uaxqb"]
 [ext_resource type="Texture2D" uid="uid://c8akyrglba21q" path="res://art/character/player.png" id="2_0shyb"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6bmg"]
+radius = 13.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhecx"]
 atlas = ExtResource("2_0shyb")
 region = Rect2(0, 96, 48, 48)
@@ -288,43 +291,36 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l6bmg"]
-radius = 9.0
-
 [node name="player" type="CharacterBody2D"]
-y_sort_enabled = true
 script = ExtResource("1_uaxqb")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_l6bmg")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-1, -27)
+position = Vector2(-2, -25)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nvmho")
 animation = &"front_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_l6bmg")
-
 [node name="Cameras" type="Node2D" parent="."]
 
 [node name="Camera2D_entrada_facu" type="Camera2D" parent="Cameras"]
-position = Vector2(3, -4)
+position = Vector2(0, -9)
 zoom = Vector2(2, 2)
-limit_left = -30
-limit_top = -85
-limit_right = 650
-limit_bottom = 733
+limit_left = 0
+limit_top = 0
+limit_right = 600
+limit_bottom = 650
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Camera2D_planta_baja_pasillo_1" type="Camera2D" parent="Cameras"]
 position = Vector2(0, -18)
-enabled = false
 zoom = Vector2(2, 2)
 limit_left = 160
-limit_top = -65
+limit_top = 0
 limit_right = 2150
 limit_bottom = 316
 drag_horizontal_enabled = true
@@ -332,7 +328,6 @@ drag_vertical_enabled = true
 
 [node name="Camera2D_planta_baja_pasillo_2" type="Camera2D" parent="Cameras"]
 position = Vector2(0, -36)
-enabled = false
 zoom = Vector2(2, 2)
 limit_left = 150
 limit_top = -40
@@ -342,12 +337,11 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Camera2D_patio" type="Camera2D" parent="Cameras"]
-position = Vector2(10, 84)
-enabled = false
+position = Vector2(0, -72)
 zoom = Vector2(2, 2)
 limit_left = -40
-limit_top = -30
-limit_right = 1560
-limit_bottom = 980
+limit_top = 6
+limit_right = 1620
+limit_bottom = 1020
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
