@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=6 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
 [ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_p5rqs"]
+[ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_xoyuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28p1q"]
 size = Vector2(167.938, 61.2655)
@@ -65,6 +66,17 @@ shape = SubResource("RectangleShape2D_28p1q")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Pasillo2_transition"]
 position = Vector2(1469, 973.266)
 shape = SubResource("RectangleShape2D_28p1q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1115.0
+offset_top = 13.75
+offset_right = 1421.0
+offset_bottom = 167.75
+texture = ExtResource("4_xoyuh")
 
 [connection signal="body_entered" from="Pasillo1_transition" to="." method="_on_pasillo_1_transition_body_entered"]
 [connection signal="body_exited" from="Pasillo1_transition" to="." method="_on_pasillo_1_transition_body_exited"]

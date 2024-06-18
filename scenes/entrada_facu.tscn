@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb46wwulg4c11"]
+[gd_scene load_steps=7 format=3 uid="uid://cb46wwulg4c11"]
 
 [ext_resource type="Script" path="res://scripts/entrada_facu.gd" id="1_tbg8m"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_washd"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_6c82k"]
+[ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_ueehw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vti4"]
 size = Vector2(58, 83)
@@ -49,7 +50,7 @@ polygon = PackedVector2Array(482, 252, 524, 252, 525, 373, 484, 372)
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_6c82k")]
-position = Vector2(257, 378)
+position = Vector2(290, 347)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(276, 199)
@@ -70,6 +71,17 @@ shape = SubResource("RectangleShape2D_4vti4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PB_pasillo2_transition"]
 position = Vector2(-32, 487)
 shape = SubResource("RectangleShape2D_xto5b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1115.0
+offset_top = 13.75
+offset_right = 1421.0
+offset_bottom = 167.75
+texture = ExtResource("4_ueehw")
 
 [connection signal="body_entered" from="PB_Pasillo1_transition" to="." method="_on_pb_pasillo_1_transition_body_entered"]
 [connection signal="body_exited" from="PB_Pasillo1_transition" to="." method="_on_pb_pasillo_1_transition_body_exited"]
