@@ -5,10 +5,17 @@ class_name InteractionArea
 var interact: Callable = func():
 	pass
 
+func _ready():
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func _on_body_entered(body):
-	InteractionManager.register_area(self)
+	if body.is_in_group("player"):  
+		print("Player entered interaction area")
+		InteractionManager.register_area(self)
 
 
 func _on_body_exited(body):
-	InteractionManager.unregister_area(self)
+	if body.is_in_group("player"): 
+		print("Player left interaction area")
+		InteractionManager.unregister_area(self)

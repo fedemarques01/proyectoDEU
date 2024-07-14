@@ -1,11 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://c14mvj0aw5h3t"]
+[gd_scene load_steps=4 format=3 uid="uid://c14mvj0aw5h3t"]
 
 [ext_resource type="Script" path="res://scenes/interactions/InteractionManager.gd" id="1_am56r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xgej8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emtbm"]
+texture = SubResource("CanvasTexture_xgej8")
+modulate_color = Color(0.622359, 0.505134, 0.304965, 1)
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_am56r")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Text"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+z_as_relative = false
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_emtbm")
+horizontal_alignment = 1
+vertical_alignment = 1

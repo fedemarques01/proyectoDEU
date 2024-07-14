@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cb46wwulg4c11"]
+[gd_scene load_steps=12 format=3 uid="uid://cb46wwulg4c11"]
 
 [ext_resource type="Script" path="res://scripts/entrada_facu.gd" id="1_tbg8m"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_washd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_ueehw"]
 [ext_resource type="Script" path="res://scenes/interactions/test/test_ascensor.gd" id="5_o38ge"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_uqsi1"]
+[ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="7_yv2li"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vti4"]
 size = Vector2(58, 83)
@@ -22,6 +23,8 @@ size = Vector2(89.625, 74.375)
 [node name="entrada_facu" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_tbg8m")
+
+[node name="InteractionManager" parent="." instance=ExtResource("7_yv2li")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_washd")
