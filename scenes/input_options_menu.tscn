@@ -77,6 +77,7 @@ size_flags_horizontal = 3
 
 [node name="input_button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/action_list" instance=ExtResource("2_tin47")]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../../../reset_button")
 
 [node name="reset_button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -85,6 +86,8 @@ text = "Resetear controles"
 
 [node name="exit_button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../ScrollContainer/action_list/input_button")
+button_mask = 5
 text = "Volver"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/reset_button" to="." method="_on_reset_button_pressed"]

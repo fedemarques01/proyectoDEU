@@ -6,7 +6,7 @@ extends Control
 var is_remapping = false 
 var action_to_remap = null
 var remapping_button = null
-var current_focus_index = -1 
+var current_focus_index = -1
 
 var input_actions = {
 	"move_up": "Mover para arriba",
@@ -18,12 +18,15 @@ var input_actions = {
 
 func _ready():
 	_create_action_list()
-
-		
+	_set_initial_focus()
+	
 func _create_action_list():
 	InputMap.load_from_project_settings()
+
 	for item in action_list.get_children():
 		item.queue_free()
+	
+	print("amount of buttons: ", input_actions.size())
 	
 	for action in input_actions:
 		var button = input_button_scene.instantiate()
@@ -45,8 +48,14 @@ func _create_action_list():
 		button.connect("focus_entered", Callable(self, "_on_button_focus_entered"))
 		button.connect("focus_exited", Callable(self, "_on_button_focus_exited"))
 
-			
 		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		
+	print("amount of buttons: ", action_list.get_children().size())
+
+func _set_initial_focus():
+	if action_list.get_child_count() > 0:
+		current_focus_index = 0
+		action_list.get_child(current_focus_index).grab_focus()
 
 func _on_input_button_pressed(button, action):
 	if is_remapping:
@@ -105,14 +114,22 @@ func _is_duplicate(event):
 	return false
 
 func _focus_next():
-	if current_focus_index >= 0 and action_list.get_child_count() > 0:
+	if action_list.get_child_count() > 0:
 		current_focus_index = (current_focus_index + 1) % action_list.get_child_count()
-		action_list.get_child(current_focus_index).grab_focus()
+		print("Next focus index:", current_focus_index)
+		var next_child = action_list.get_child(current_focus_index)
+		if next_child.focus_mode == Control.FOCUS_ALL:
+			next_child.grab_focus()
+			print("Focusing on:", next_child)
 
 func _focus_prev():
-	if current_focus_index >= 0 and action_list.get_child_count() > 0:
+	if action_list.get_child_count() > 0:
 		current_focus_index = (current_focus_index - 1 + action_list.get_child_count()) % action_list.get_child_count()
-		action_list.get_child(current_focus_index).grab_focus()
+		print("Previous focus index:", current_focus_index)
+		var prev_child = action_list.get_child(current_focus_index)
+		if prev_child.focus_mode == Control.FOCUS_ALL:
+			prev_child.grab_focus()
+			print("Focusing on:", prev_child)
 
 		
 func _update_action_list(button, event):
@@ -121,8 +138,7 @@ func _update_action_list(button, event):
 
 func _on_reset_button_pressed():
 	_create_action_list()
-	
-
 
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
