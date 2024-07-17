@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_f7j7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrmw0"]
-size = Vector2(79.625, 81)
+size = Vector2(116.813, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwku2"]
 size = Vector2(49.5, 47)
@@ -64,7 +64,7 @@ position = Vector2(1081.5, 262)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Patio_transition"]
-position = Vector2(374, 280)
+position = Vector2(379, 280)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

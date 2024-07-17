@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@onready var interaction_area = $InteractionArea
+@onready var interaction_area = $Mapa_facu
 @export var interaction_message: String = "Muestra el mapa de la facultad"
 
 func _ready(): #al interactuar, se interactua

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=11 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
 [ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_p5rqs"]
 [ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_xoyuh"]
+[ext_resource type="Script" path="res://scenes/interactions/interaction action/horario_buffet.gd" id="5_tk43t"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_vbo6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28p1q"]
@@ -91,10 +92,11 @@ texture = ExtResource("4_xoyuh")
 [node name="Interactions" type="Node2D" parent="."]
 
 [node name="Horarios_del_buffet" type="StaticBody2D" parent="Interactions"]
+script = ExtResource("5_tk43t")
 
 [node name="Buffet" type="Area2D" parent="Interactions/Horarios_del_buffet"]
 script = ExtResource("5_vbo6q")
-action_name = "Buffet: Ver horario"
+action_name = "Buffet: Ver horario de atencion"
 
 [node name="Entrada1" type="CollisionShape2D" parent="Interactions/Horarios_del_buffet/Buffet"]
 position = Vector2(433, 499)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://clvnfqsvye4pl"]
+[gd_scene load_steps=11 format=3 uid="uid://clvnfqsvye4pl"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_n5ajw"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_2.gd" id="1_vkjf8"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_bbc7y"]
 [ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_l254k"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="5_hq2rd"]
+[ext_resource type="Script" path="res://scenes/interactions/interaction action/ventana_alumnos.gd" id="6_03qwm"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_hm08g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juw2b"]
@@ -85,12 +86,13 @@ texture = ExtResource("4_l254k")
 [node name="Interactions" type="Node2D" parent="."]
 
 [node name="Ventana de Alumnos" type="StaticBody2D" parent="Interactions"]
+script = ExtResource("6_03qwm")
 
-[node name="Alumnos" type="Area2D" parent="Interactions/Ventana de Alumnos"]
+[node name="Ventana_alumnos" type="Area2D" parent="Interactions/Ventana de Alumnos"]
 script = ExtResource("6_hm08g")
 action_name = "Alumnos: Ver horario de atencion"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Ventana de Alumnos/Alumnos"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Ventana de Alumnos/Ventana_alumnos"]
 position = Vector2(1909.75, 170)
 shape = SubResource("RectangleShape2D_331c7")
 

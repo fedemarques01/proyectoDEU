@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cb46wwulg4c11"]
+[gd_scene load_steps=16 format=3 uid="uid://cb46wwulg4c11"]
 
 [ext_resource type="Script" path="res://scripts/entrada_facu.gd" id="1_tbg8m"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_washd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/mirar_mapa.gd" id="5_o38ge"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_uqsi1"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="7_yv2li"]
+[ext_resource type="Script" path="res://scenes/interactions/interaction action/horario_biblioteca.gd" id="8_182xs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vti4"]
 size = Vector2(58, 83)
@@ -106,11 +107,11 @@ texture = ExtResource("4_ueehw")
 [node name="Mapa_entrada" type="StaticBody2D" parent="Interactions"]
 script = ExtResource("5_o38ge")
 
-[node name="InteractionArea" type="Area2D" parent="Interactions/Mapa_entrada"]
+[node name="Mapa_facu" type="Area2D" parent="Interactions/Mapa_entrada"]
 script = ExtResource("5_uqsi1")
 action_name = "Mapa de la facultad"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Mapa_entrada/InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Mapa_entrada/Mapa_facu"]
 position = Vector2(383.5, 299)
 shape = SubResource("RectangleShape2D_bri1v")
 
@@ -138,11 +139,14 @@ action_name = "Baños"
 position = Vector2(119, 3)
 shape = SubResource("RectangleShape2D_67tdb")
 
-[node name="Biblioteca" type="Area2D" parent="Interactions"]
-script = ExtResource("5_uqsi1")
-action_name = "Biblioteca"
+[node name="Biblioteca" type="StaticBody2D" parent="Interactions"]
+script = ExtResource("8_182xs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Biblioteca"]
+[node name="Biblioteca" type="Area2D" parent="Interactions/Biblioteca"]
+script = ExtResource("5_uqsi1")
+action_name = "Biblioteca: Ver horario de atencion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Biblioteca/Biblioteca"]
 position = Vector2(75.5, 294.75)
 shape = SubResource("RectangleShape2D_w3koq")
 
