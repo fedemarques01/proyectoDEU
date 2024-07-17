@@ -1,13 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://doxih0j1xv67e"]
+[gd_scene load_steps=11 format=3 uid="uid://doxih0j1xv67e"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_muo3p"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_1.gd" id="1_rswto"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_dri6r"]
 [ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_ebbr1"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="5_5fcan"]
+[ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_f7j7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrmw0"]
 size = Vector2(79.625, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwku2"]
+size = Vector2(49.5, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7dwr"]
+size = Vector2(121, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w1hs"]
+size = Vector2(77, 49)
 
 [node name="planta_baja_pasillo1" type="Node2D"]
 script = ExtResource("1_rswto")
@@ -48,7 +58,6 @@ position = Vector2(2187.81, 120)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [node name="Patio_transition" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Patio_transition"]
 position = Vector2(1081.5, 262)
@@ -59,6 +68,7 @@ position = Vector2(374, 280)
 shape = SubResource("RectangleShape2D_wrmw0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 
@@ -70,6 +80,112 @@ offset_bottom = 167.75
 texture = ExtResource("4_ebbr1")
 
 [node name="InteractionManager" parent="." instance=ExtResource("5_5fcan")]
+
+[node name="Interactions" type="Node2D" parent="."]
+
+[node name="Aula_1" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_1"]
+position = Vector2(2050, 76)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_2" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_2"]
+position = Vector2(1922, 75)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_3" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_3"]
+position = Vector2(1824, 77)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_4" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_4"]
+position = Vector2(1681, 74)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_5" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_5"]
+position = Vector2(1505, 70)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_6" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_6"]
+position = Vector2(881, 74)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_7" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_7"]
+position = Vector2(800, 74)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_8" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_8"]
+position = Vector2(639, 72)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_9" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 9"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_9"]
+position = Vector2(448, 70)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Aula_10A" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Aula 10A"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_10A"]
+position = Vector2(284, 172)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Cefi" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Cefi"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Cefi"]
+position = Vector2(258, 84)
+shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Baños" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Baños"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Baños"]
+position = Vector2(1078, 42)
+shape = SubResource("RectangleShape2D_e7dwr")
+
+[node name="Fotocopiadora" type="Area2D" parent="Interactions"]
+script = ExtResource("6_f7j7l")
+action_name = "Fotocopiadora"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Fotocopiadora"]
+position = Vector2(1219.5, 66.5)
+shape = SubResource("RectangleShape2D_1w1hs")
 
 [connection signal="body_entered" from="Entrada_transition" to="." method="_on_entrada_transition_body_entered"]
 [connection signal="body_exited" from="Entrada_transition" to="." method="_on_entrada_transition_body_exited"]
