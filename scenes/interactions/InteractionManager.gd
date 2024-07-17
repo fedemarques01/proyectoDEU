@@ -3,7 +3,7 @@ extends Node2D
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var label = $CanvasLayer/Label
 
-const base_text = "Area de interacción: "
+const base_text = ""
 
 
 var active_areas = []

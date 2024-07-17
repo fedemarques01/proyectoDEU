@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://clvnfqsvye4pl"]
+[gd_scene load_steps=11 format=3 uid="uid://clvnfqsvye4pl"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_n5ajw"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_2.gd" id="1_vkjf8"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_bbc7y"]
 [ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_l254k"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="5_hq2rd"]
+[ext_resource type="Script" path="res://scenes/interactions/interaction action/ventana_alumnos.gd" id="6_03qwm"]
+[ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_hm08g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juw2b"]
 size = Vector2(72, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfoy"]
 size = Vector2(107, 63.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_331c7"]
+size = Vector2(131.5, 72)
 
 [node name="planta_baja_pasillo_2" type="Node2D"]
 script = ExtResource("1_vkjf8")
@@ -28,6 +33,7 @@ layer_3/name = "decoracion2"
 layer_3/tile_data = PackedInt32Array(131141, 458753, 56, 131142, 458753, 56, 131143, 458753, 56, 131144, 458753, 56, 131145, 458753, 56, 131146, 458753, 56, 131147, 458753, 56, 131148, 458753, 56, 131149, 458753, 56, 131150, 458753, 56, 131151, 458753, 56, 131152, 458753, 56, 131153, 458753, 56, 131154, 458753, 56, 131155, 458753, 56, 131156, 458753, 56, 131157, 458753, 56, 131158, 458753, 56, 131159, 458753, 56, 131160, 458753, 56, 131161, 458753, 56, 131162, 458753, 56, 131163, 458753, 56, 131164, 458753, 56, 131165, 458753, 56, 131166, 458753, 56, 131167, 458753, 56, 131168, 458753, 56, 131169, 458753, 56, 131170, 458753, 56, 131171, 458753, 56, 131172, 458753, 56, 131173, 458753, 56, 131174, 458753, 56, 131175, 458753, 56, 131176, 458753, 56, 131177, 458753, 56, 131178, 458753, 56, 131179, 458753, 56, 131180, 458753, 56, 131181, 458753, 56, 131182, 458753, 56, 131183, 458753, 56, 131184, 458753, 56, 131185, 458753, 56, 131186, 458753, 56, 131187, 458753, 56, 131188, 458753, 56, 131095, 458753, 56, 131096, 458753, 56, 131097, 458753, 56, 131098, 458753, 56, 131099, 458753, 56, 131100, 458753, 56, 131101, 458753, 56, 131102, 458753, 56, 131103, 458753, 56, 131104, 458753, 56, 131105, 458753, 56, 131106, 458753, 56, 131107, 458753, 56, 131108, 458753, 56, 131109, 458753, 56, 131110, 458753, 56, 131111, 458753, 56, 131112, 458753, 56, 131113, 458753, 56, 131114, 458753, 56, 131115, 458753, 56, 131116, 458753, 56, 131117, 458753, 56, 131118, 458753, 56, 131119, 458753, 56, 131120, 458753, 56, 131121, 458753, 56, 131122, 458753, 56, 131123, 458753, 56, 131124, 458753, 56, 131125, 458753, 56, 131126, 458753, 56, 131127, 458753, 56, 131128, 458753, 56, 131129, 458753, 56, 131130, 458753, 56, 131131, 458753, 56, 131132, 458753, 56, 131133, 458753, 56, 131134, 458753, 56, 131194, 458753, 56, 131195, 458753, 56, 131196, 458753, 56, 131197, 458753, 56, 131198, 458753, 56, 131199, 458753, 56, 131200, 458753, 56, 131201, 458753, 56, 131202, 458753, 56, 131203, 458753, 56, 131083, 458753, 56, 131084, 458753, 56, 131085, 458753, 56, 131086, 458753, 56, 131087, 458753, 56, 131088, 458753, 56)
 
 [node name="collisions" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(174, 79, 272, 77, 271, -1, 368, 1, 369, 77, 1007, 78, 1007, 1, 1105, 1, 1105, 77, 1870, 77, 1872, 3, 1952, 1, 1953, 77, 2111, 77, 2177, 76, 2180, 160, 2112, 160, 2112, 182, 2112, 159, 2080, 161, 2080, 180, 2048, 181, 2048, 158, 1888, 160, 1887, 182, 1855, 183, 1855, 160, 1792, 160, 1793, 182, 1759, 181, 1760, 158, 1536, 161, 1538, 214, 1472, 214, 1472, 192, 1424, 193, 1425, 213, 1359, 214, 1360, 160, 1169, 161, 1169, 180, 1135, 181, 1136, 160, 993, 161, 992, 181, 959, 182, 959, 159, 831, 161, 832, 183, 798, 183, 800, 160, 672, 160, 673, 182, 640, 181, 639, 158, 528, 160, 528, 181, 495, 182, 495, 160, 384, 161, 384, 181, 351, 181, 351, 159, 240, 160, 240, 182, 207, 181, 208, 159, 172, 159, 174, 79, 155, 51, 156, 367, 1536, 372, 2114, 370, 2241, 94, 2111, -43, 150, -37, 156, 51)
@@ -76,6 +82,19 @@ offset_bottom = 167.75
 texture = ExtResource("4_l254k")
 
 [node name="InteractionManager" parent="." instance=ExtResource("5_hq2rd")]
+
+[node name="Interactions" type="Node2D" parent="."]
+
+[node name="Ventana de Alumnos" type="StaticBody2D" parent="Interactions"]
+script = ExtResource("6_03qwm")
+
+[node name="Ventana_alumnos" type="Area2D" parent="Interactions/Ventana de Alumnos"]
+script = ExtResource("6_hm08g")
+action_name = "Alumnos: Ver horario de atencion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Ventana de Alumnos/Ventana_alumnos"]
+position = Vector2(1909.75, 170)
+shape = SubResource("RectangleShape2D_331c7")
 
 [connection signal="body_entered" from="Entrada_transition" to="." method="_on_entrada_transition_body_entered"]
 [connection signal="body_exited" from="Entrada_transition" to="." method="_on_entrada_transition_body_exited"]
