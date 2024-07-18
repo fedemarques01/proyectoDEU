@@ -352,3 +352,9 @@ limit_right = 1560
 limit_bottom = 980
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Camera2D_primer_piso" type="Camera2D" parent="Cameras"]
+limit_left = 10
+limit_top = -40
+limit_right = 1910
+limit_bottom = 650

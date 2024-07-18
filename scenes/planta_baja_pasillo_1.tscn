@@ -34,10 +34,10 @@ layer_2/tile_data = PackedInt32Array(655493, 393217, 56, 721029, 393217, 57, 786
 layer_3/name = "decoracion2"
 layer_3/tile_data = PackedInt32Array(786566, 458753, 56, 786565, 458753, 56, 786564, 458753, 56, 786563, 458753, 56, 786531, 458753, 56, 786532, 458753, 56, 786533, 458753, 56, 786534, 458753, 56, 786535, 458753, 56, 786536, 458753, 56, 786537, 458753, 56, 786538, 458753, 56, 786539, 458753, 56, 786540, 458753, 56, 786541, 458753, 56, 786542, 458753, 56, 786543, 458753, 56, 786544, 458753, 56, 786545, 458753, 56, 786546, 458753, 56, 786547, 458753, 56, 786548, 458753, 56, 786549, 458753, 56, 786550, 458753, 56, 786551, 458753, 56, 786552, 458753, 56, 786553, 458753, 56, 786554, 458753, 56, 786555, 458753, 56, 786556, 458753, 56, 786557, 458753, 56, 786558, 458753, 56, 786559, 458753, 56, 786560, 458753, 56, 786561, 458753, 56, 786562, 458753, 56, 786462, 458753, 56, 786463, 458753, 56, 786464, 458753, 56, 786465, 458753, 56, 786466, 458753, 56, 786467, 458753, 56, 786468, 458753, 56, 786469, 458753, 56, 786470, 458753, 56, 786471, 458753, 56, 786472, 458753, 56, 786473, 458753, 56, 786474, 458753, 56, 786475, 458753, 56, 786476, 458753, 56, 786477, 458753, 56, 786478, 458753, 56, 786479, 458753, 56, 786480, 458753, 56, 786481, 458753, 56, 786482, 458753, 56, 786483, 458753, 56, 786484, 458753, 56, 786485, 458753, 56, 786486, 458753, 56, 786487, 458753, 56, 786488, 458753, 56, 786489, 458753, 56, 786490, 458753, 56, 786491, 458753, 56, 786492, 458753, 56, 786493, 458753, 56, 786494, 458753, 56, 786495, 458753, 56, 786458, 458753, 56, 786459, 458753, 56, 786460, 458753, 56, 786461, 1507328, 4, 720925, 1507328, 4, 851997, 1507328, 4, 917533, 1507328, 4, 983069, 1507328, 4, 1048605, 1507328, 4, 1114141, 1507328, 4, 1179677, 1507328, 4, 1245213, 1507328, 4, 655389, 1507328, 2, 1114175, 1507328, 2, 1179711, 1507328, 3, 262159, 458753, 268435512, 327693, 458753, 1879048248, 393229, 458753, 1879048248)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="Collisions" type="StaticBody2D" parent="."]
 visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(253, 78, 431, 78, 1023, 78, 1024, 15, 1135, 15, 1136, 79, 1295, 79, 1297, -63, 1390, -61, 1394, 78, 2160, 79, 2227, 79, 2229, 163, 2160, 162, 1345, 161, 1345, 183, 1280, 183, 1279, 160, 1249, 161, 1249, 180, 1183, 180, 1184, 159, 1136, 159, 1136, 303, 1025, 304, 1023, 160, 416, 161, 415, 238, 465, 238, 466, 319, 317, 318, 319, 160, 252, 160, 253, 83, 161, -98, 167, 326, 2164, 307, 2271, 116, 2176, -86, 161, -100)
 
 [node name="Entity_container" type="Node2D" parent="."]
@@ -50,6 +50,18 @@ position = Vector2(1332, 91)
 limit_left = 160
 limit_right = 2150
 limit_bottom = 316
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1115.0
+offset_top = 13.75
+offset_right = 1421.0
+offset_bottom = 167.75
+texture = ExtResource("4_ebbr1")
 
 [node name="Entrada_transition" type="Area2D" parent="."]
 
@@ -66,18 +78,6 @@ shape = SubResource("RectangleShape2D_wrmw0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Patio_transition"]
 position = Vector2(379, 280)
 shape = SubResource("RectangleShape2D_wrmw0")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-scale = Vector2(0.8, 0.8)
-transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 1115.0
-offset_top = 13.75
-offset_right = 1421.0
-offset_bottom = 167.75
-texture = ExtResource("4_ebbr1")
 
 [node name="InteractionManager" parent="." instance=ExtResource("5_5fcan")]
 
