@@ -8,13 +8,13 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_e3o13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miomm"]
-size = Vector2(91, 77.5)
+size = Vector2(91, 62.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evyxq"]
-size = Vector2(96, 74)
+size = Vector2(96, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4o5v"]
-size = Vector2(89, 76)
+size = Vector2(89, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl052"]
 size = Vector2(54.75, 71.5)
@@ -50,7 +50,7 @@ layer_3/tile_data = PackedInt32Array(589943, 327681, 1879048248, 655479, 327681,
 visible = false
 
 [node name="Outer_collisions" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(271, 63, 273, 143, 944, 144, 945, 369, 770, 371, 773, 416, 945, 416, 943, 528, 18, 531, 16, 577, 64.2566, 576, 64, 598, 96, 598, 96.0765, 576, 223.356, 576, 224, 598, 257, 599, 258.004, 576, 383.162, 576, 384, 598, 416, 598, 417.103, 576, 512.562, 576, 512, 629, 576, 630, 578, 609, 624, 609, 624, 630, 688, 631, 689.339, 576, 847, 576, 848, 599, 879, 597, 880.258, 576, 1008, 576, 1008, 598, 1040, 598, 1039.9, 576, 1168.76, 576, 1168, 599, 1201, 598, 1201.72, 576, 1328.33, 576, 1327, 599, 1360, 598, 1360.54, 576, 1904, 576, 1903, 19, 1696.93, 16.8309, 1695, -51, 1618, -52, 1618, 16, 1619, 65, 1487, 64, 1485, 14, 1486, -49, 1410, -48, 1409, 16, 1297, 16, 1297, 66, 511, 65, 512, 36, 448, 35, 449, 63, 274, 63, 28, -49, 2053, -232, 2071, 903, -157, 850, 34, -38)
+polygon = PackedVector2Array(271, 63, 273, 143, 944, 144, 945, 369, 770, 371, 773, 416, 945, 416, 947, 498, 19, 496, 16, 577, 64.2566, 576, 64, 598, 96, 598, 96.0765, 576, 223.356, 576, 224, 598, 257, 599, 258.004, 576, 383.162, 576, 384, 598, 416, 598, 417.103, 576, 512.562, 576, 512, 629, 576, 630, 578, 609, 624, 609, 624, 630, 688, 631, 689.339, 576, 847, 576, 848, 599, 879, 597, 880.258, 576, 1008, 576, 1008, 598, 1040, 598, 1039.9, 576, 1168.76, 576, 1168, 599, 1201, 598, 1201.72, 576, 1328.33, 576, 1327, 599, 1360, 598, 1360.54, 576, 1904, 576, 1903, 19, 1696.93, 16.8309, 1694, -80, 1616, -79, 1618, 16, 1619, 65, 1487, 64, 1485, 14, 1488, -69, 1405, -67, 1409, 16, 1297, 16, 1297, 66, 511, 65, 512, 36, 448, 35, 449, 63, 274, 63, 28, -49, 2053, -232, 2071, 903, -157, 850, 34, -38)
 
 [node name="Inner_collisions" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(1057, 145, 1059, 531, 1809, 529, 1807, 143)
@@ -90,21 +90,21 @@ shape = SubResource("RectangleShape2D_miomm")
 position = Vector2(777, 396)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1piso_entrada_transition"]
-position = Vector2(672, -438)
+position = Vector2(672, -460)
 shape = SubResource("RectangleShape2D_evyxq")
 
 [node name="1piso_2piso_transition" type="Area2D" parent="."]
 position = Vector2(777, 396)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1piso_2piso_transition"]
-position = Vector2(878.5, -439)
+position = Vector2(878.5, -461)
 shape = SubResource("RectangleShape2D_y4o5v")
 
 [node name="1piso_pasillo_1_transition" type="Area2D" parent="."]
 position = Vector2(777, 396)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1piso_pasillo_1_transition"]
-position = Vector2(-297, -371)
+position = Vector2(-297, -378.375)
 shape = SubResource("RectangleShape2D_miomm")
 
 [node name="1piso_pasillo_2_transition" type="Area2D" parent="."]

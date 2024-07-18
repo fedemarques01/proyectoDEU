@@ -16,7 +16,7 @@ size = Vector2(58, 83)
 size = Vector2(63, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2e67"]
-size = Vector2(97, 74)
+size = Vector2(97, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bri1v"]
 size = Vector2(85, 90)
@@ -106,7 +106,7 @@ shape = SubResource("RectangleShape2D_xto5b")
 [node name="PB_1piso_transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PB_1piso_transition"]
-position = Vector2(367.5, -27)
+position = Vector2(367.5, -42)
 shape = SubResource("RectangleShape2D_n2e67")
 
 [node name="InteractionManager" parent="." instance=ExtResource("7_yv2li")]
