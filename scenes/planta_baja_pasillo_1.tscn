@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://doxih0j1xv67e"]
+[gd_scene load_steps=13 format=3 uid="uid://doxih0j1xv67e"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_muo3p"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_1.gd" id="1_rswto"]
@@ -8,10 +8,16 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_f7j7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrmw0"]
-size = Vector2(116.813, 81)
+size = Vector2(116.813, 66.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwku2"]
 size = Vector2(56.375, 44.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xfud"]
+size = Vector2(46, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f5wp"]
+size = Vector2(71, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7dwr"]
 size = Vector2(121, 66)
@@ -46,7 +52,7 @@ polygon = PackedVector2Array(253, 78, 431, 78, 1023, 78, 1024, 15, 1135, 15, 113
 position = Vector2(1217, 121)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1332, 91)
+position = Vector2(1371, 118)
 limit_left = 160
 limit_right = 2150
 limit_bottom = 316
@@ -79,6 +85,12 @@ shape = SubResource("RectangleShape2D_wrmw0")
 position = Vector2(379, 280)
 shape = SubResource("RectangleShape2D_wrmw0")
 
+[node name="Primer_piso_transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Primer_piso_transition"]
+position = Vector2(1347, -56.25)
+shape = SubResource("RectangleShape2D_wrmw0")
+
 [node name="InteractionManager" parent="." instance=ExtResource("5_5fcan")]
 
 [node name="Interactions" type="Node2D" parent="."]
@@ -96,7 +108,7 @@ script = ExtResource("6_f7j7l")
 action_name = "Aula 2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_2"]
-position = Vector2(1908, 75)
+position = Vector2(1915, 80)
 shape = SubResource("RectangleShape2D_kwku2")
 
 [node name="Aula_3" type="Area2D" parent="Interactions"]
@@ -104,7 +116,7 @@ script = ExtResource("6_f7j7l")
 action_name = "Aula 3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_3"]
-position = Vector2(1835, 77)
+position = Vector2(1826, 78)
 shape = SubResource("RectangleShape2D_kwku2")
 
 [node name="Aula_4" type="Area2D" parent="Interactions"]
@@ -112,8 +124,12 @@ script = ExtResource("6_f7j7l")
 action_name = "Aula 4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_4"]
-position = Vector2(1681, 77)
-shape = SubResource("RectangleShape2D_kwku2")
+position = Vector2(1682, 75)
+shape = SubResource("RectangleShape2D_7xfud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactions/Aula_4"]
+position = Vector2(1504, 75)
+shape = SubResource("RectangleShape2D_7xfud")
 
 [node name="Aula_5" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
@@ -161,8 +177,8 @@ script = ExtResource("6_f7j7l")
 action_name = "Aula 10A"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_10A"]
-position = Vector2(255, 172)
-shape = SubResource("RectangleShape2D_kwku2")
+position = Vector2(255.5, 187)
+shape = SubResource("RectangleShape2D_2f5wp")
 
 [node name="Cefi" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
@@ -192,3 +208,5 @@ shape = SubResource("RectangleShape2D_1w1hs")
 [connection signal="body_exited" from="Entrada_transition" to="." method="_on_entrada_transition_body_exited"]
 [connection signal="body_entered" from="Patio_transition" to="." method="_on_patio_transition_body_entered"]
 [connection signal="body_exited" from="Patio_transition" to="." method="_on_patio_transition_body_exited"]
+[connection signal="body_entered" from="Primer_piso_transition" to="." method="_on_primer_piso_transition_body_entered"]
+[connection signal="body_exited" from="Primer_piso_transition" to="." method="_on_primer_piso_transition_body_exited"]

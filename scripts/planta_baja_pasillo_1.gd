@@ -45,3 +45,16 @@ func calculate_pos_transition_patio():
 	else:
 		global.player_transition_posx = 70
 	global.player_transition_posy = 160
+
+
+func _on_primer_piso_transition_body_entered(body):
+	if body.has_method("player"):
+		global.transition_to = "primer_piso"
+		global.player_transition_posx = 480
+		global.player_transition_posy = 140
+		global.transition_scene = true
+
+
+func _on_primer_piso_transition_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
