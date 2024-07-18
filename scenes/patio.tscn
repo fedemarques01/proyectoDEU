@@ -110,19 +110,19 @@ shape = SubResource("RectangleShape2D_lsqyg")
 position = Vector2(166.5, 134)
 shape = SubResource("RectangleShape2D_lsqyg")
 
-[node name="Aula_10B" type="Area2D" parent="Interactions"]
+[node name="Aula_11" type="Area2D" parent="Interactions"]
 script = ExtResource("5_vbo6q")
-action_name = "Aula 10B"
+action_name = "Aula 11"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_10B"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_11"]
 position = Vector2(19.5, 527.25)
 shape = SubResource("RectangleShape2D_66o4l")
 
-[node name="Aula_10A" type="Area2D" parent="Interactions"]
+[node name="Aula_10B2" type="Area2D" parent="Interactions"]
 script = ExtResource("5_vbo6q")
-action_name = "Esto es una pared"
+action_name = "Aula 10B"
 
-[node name="Pared" type="CollisionShape2D" parent="Interactions/Aula_10A"]
+[node name="Pared" type="CollisionShape2D" parent="Interactions/Aula_10B2"]
 position = Vector2(19, 259)
 shape = SubResource("RectangleShape2D_1jvc5")
 
