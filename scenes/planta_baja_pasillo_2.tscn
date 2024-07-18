@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clvnfqsvye4pl"]
+[gd_scene load_steps=12 format=3 uid="uid://clvnfqsvye4pl"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_n5ajw"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_2.gd" id="1_vkjf8"]
@@ -13,6 +13,9 @@ size = Vector2(72, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfoy"]
 size = Vector2(107, 63.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4povh"]
+size = Vector2(78.5, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_331c7"]
 size = Vector2(131.5, 72)
@@ -81,6 +84,12 @@ shape = SubResource("RectangleShape2D_pvfoy")
 position = Vector2(1913, 31.8125)
 shape = SubResource("RectangleShape2D_pvfoy")
 
+[node name="Primer_piso_transition2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Primer_piso_transition2"]
+position = Vector2(1503.25, 214)
+shape = SubResource("RectangleShape2D_4povh")
+
 [node name="InteractionManager" parent="." instance=ExtResource("5_hq2rd")]
 
 [node name="Interactions" type="Node2D" parent="."]
@@ -100,3 +109,5 @@ shape = SubResource("RectangleShape2D_331c7")
 [connection signal="body_exited" from="Entrada_transition" to="." method="_on_entrada_transition_body_exited"]
 [connection signal="body_entered" from="Patio_transition" to="." method="_on_patio_transition_body_entered"]
 [connection signal="body_exited" from="Patio_transition" to="." method="_on_patio_transition_body_exited"]
+[connection signal="body_entered" from="Primer_piso_transition2" to="." method="_on_primer_piso_transition_2_body_entered"]
+[connection signal="body_exited" from="Primer_piso_transition2" to="." method="_on_primer_piso_transition_2_body_exited"]

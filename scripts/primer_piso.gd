@@ -65,7 +65,11 @@ func _on_piso_pasillo_1_transition_body_exited(body):
 
 
 func _on_piso_pasillo_2_transition_body_entered(body):
-	pass
+	if body.has_method("player"):
+		global.transition_to = "planta_baja_pasillo_2"
+		global.player_transition_posx = 1453
+		global.player_transition_posy = 100
+		global.transition_scene = true
 
 
 func _on_piso_pasillo_2_transition_body_exited(body):
