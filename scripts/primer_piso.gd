@@ -2,6 +2,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
 	$Entity_container/player.position.x = global.player_transition_posx
 	$Entity_container/player.position.y = global.player_transition_posy
 
@@ -18,35 +19,55 @@ func change_scene():
 		global.current_scene = global.transition_to
 
 #en caso de colisionar con el trigger de transicion, se cambia la escena
-func _on_pb_pasillo_1_transition_body_entered(body):
+func _on_piso_patio_transition_body_entered(body):
+	if body.has_method("player"):
+		global.transition_to = "patio"
+		global.player_transition_posx = 1400
+		global.player_transition_posy = 778
+		global.transition_scene = true
+
+func _on_piso_patio_transition_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
+
+
+func _on_piso_entrada_transition_body_entered(body):
+	if body.has_method("player"):
+		global.transition_to = "entrada_facu"
+		global.player_transition_posx = 369
+		global.player_transition_posy = 100
+		global.transition_scene = true
+
+func _on_piso_entrada_transition_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
+
+
+func _on_piso_2_piso_transition_body_entered(body):
+	pass # Replace with function body.
+
+func _on_piso_2_piso_transition_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
+
+
+func _on_piso_pasillo_1_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_1"
-		global.player_transition_posx = 2103
-		global.player_transition_posy = 120
-		global.transition_scene = true
-func _on_pb_pasillo_1_transition_body_exited(body):
-	if body.has_method("player"):
-		global.transition_scene = false
-
-func _on_pb_pasillo_2_transition_body_entered(body):
-	if body.has_method("player"):
-		global.transition_to = "planta_baja_pasillo_2"
-		global.player_transition_posx = 2043
-		global.player_transition_posy = 120
-		global.transition_scene = true
-func _on_pb_pasillo_2_transition_body_exited(body):
-	if body.has_method("player"):
-		global.transition_scene = false
-
-
-func _on_pb_1_piso_transition_body_entered(body):
-	if body.has_method("player"):
-		global.transition_to = "primer_piso"
-		global.player_transition_posx = 1445
+		global.player_transition_posx = 1343
 		global.player_transition_posy = 70
 		global.transition_scene = true
 
 
-func _on_pb_1_piso_transition_body_exited(body):
+func _on_piso_pasillo_1_transition_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
+
+
+func _on_piso_pasillo_2_transition_body_entered(body):
+	pass
+
+
+func _on_piso_pasillo_2_transition_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false

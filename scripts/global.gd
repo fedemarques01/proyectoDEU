@@ -12,8 +12,8 @@ var player_transition_posy = 619
 
 # TTS variables
 var tts_enabled = true
-var voices = DisplayServer.tts_get_voices_for_language("es")
-var voice_id = voices[4]
+var voices = DisplayServer.tts_get_voices_for_language("ja")
+var voice_id = voices[0]
 
 func _ready():
 	print("Global listo: TTS inicializado")
