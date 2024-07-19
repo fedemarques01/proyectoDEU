@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm8yvv0qn2pgf"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_fry8n"]
+
+[node name="pause_menu" type="CanvasLayer"]
+script = ExtResource("1_fry8n")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -87.0
+offset_right = 88.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title_menu" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Menu de Pausa"
+horizontal_alignment = 1
+
+[node name="return_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../quit_button")
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+toggle_mode = true
+button_pressed = true
+text = "Volver al Juego"
+icon_alignment = 1
+language = "es_AR"
+
+[node name="map_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ver Mapa"
+
+[node name="options_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="quit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../return_button")
+text = "Salir"

@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj4618fhjwwix"]
+
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_sxnsc"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sxnsc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 184.0
+
+[node name="controls_button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Cambiar controles"
+
+[node name="music_toggle_button" type="CheckButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Activar/Desactivar Música"
+
+[node name="tts_toggle_button" type="CheckButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Activar/Desactivar TTS"
+
+[node name="choose_voice_button" type="OptionButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="font_size_button" type="OptionButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="font_color_picker_button" type="ColorPickerButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Elegir color de texto
+"
+
+[node name="back_button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Volver"
