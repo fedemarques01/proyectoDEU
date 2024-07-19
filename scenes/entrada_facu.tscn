@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/entrada_facu.gd" id="1_tbg8m"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_washd"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_6c82k"]
-[ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="4_ueehw"]
+[ext_resource type="Texture2D" uid="uid://smk14gqnctn" path="res://art/Minimap_assets/minimapa_completo_entrada_beta.png" id="4_vnvae"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/mirar_mapa.gd" id="5_o38ge"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_uqsi1"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="7_yv2li"]
@@ -88,7 +88,7 @@ offset_left = 1115.0
 offset_top = 13.75
 offset_right = 1421.0
 offset_bottom = 167.75
-texture = ExtResource("4_ueehw")
+texture = ExtResource("4_vnvae")
 
 [node name="PB_Pasillo1_transition" type="Area2D" parent="."]
 position = Vector2(95, 138)
