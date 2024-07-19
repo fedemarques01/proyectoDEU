@@ -4,7 +4,6 @@ var pause_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
 	$Entity_container/player.position.x = global.player_transition_posx
 	$Entity_container/player.position.y = global.player_transition_posy
 	
@@ -35,8 +34,8 @@ func change_scene():
 func _on_piso_patio_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "patio"
-		global.player_transition_posx = 1400
-		global.player_transition_posy = 778
+		global.player_transition_posx = 1150
+		global.player_transition_posy = 850
 		global.transition_scene = true
 
 func _on_piso_patio_transition_body_exited(body):
@@ -56,8 +55,19 @@ func _on_piso_entrada_transition_body_exited(body):
 		global.transition_scene = false
 
 
+func calculate_pos_transition_segundo_piso():
+	if $Entity_container/player.position.y < 300:
+		global.player_transition_posx = 1500
+		global.player_transition_posy = 100
+	else:
+		global.player_transition_posx = 700
+		global.player_transition_posy = 550
+
 func _on_piso_2_piso_transition_body_entered(body):
-	pass # Replace with function body.
+	if body.has_method("player"):
+		global.transition_to = "segundo_piso"
+		calculate_pos_transition_segundo_piso()
+		global.transition_scene = true
 
 func _on_piso_2_piso_transition_body_exited(body):
 	if body.has_method("player"):

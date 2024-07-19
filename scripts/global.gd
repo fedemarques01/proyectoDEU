@@ -11,7 +11,7 @@ var player_transition_posy = 619
 
 var pause_menu
 # TTS variables
-var tts_enabled = true
+var tts_enabled = false
 var voices = DisplayServer.tts_get_voices_for_language("es")
 var voice_id = voices[0]
 
