@@ -345,7 +345,7 @@ drag_vertical_enabled = true
 [node name="Camera2D_patio" type="Camera2D" parent="Cameras"]
 position = Vector2(10, 84)
 enabled = false
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = -40
 limit_top = -30
 limit_right = 1560

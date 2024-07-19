@@ -54,3 +54,11 @@ text = "Elegir color de texto
 [node name="back_button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Volver"
+
+[connection signal="pressed" from="Panel/VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/music_toggle_button" to="." method="_on_music_toggle_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/tts_toggle_button" to="." method="_on_tts_toggle_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/choose_voice_button" to="." method="_on_choose_voice_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/font_size_button" to="." method="_on_font_size_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/font_color_picker_button" to="." method="_on_font_color_picker_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]

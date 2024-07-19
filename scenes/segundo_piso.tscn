@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://pg252xxqa2j"]
+[gd_scene load_steps=3 format=3 uid="uid://pg252xxqa2j"]
 
+[ext_resource type="Script" path="res://scripts/segundo_piso.gd" id="1_07pfl"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_knau4"]
 
 [node name="segundo_piso" type="Node2D"]
+script = ExtResource("1_07pfl")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_knau4")

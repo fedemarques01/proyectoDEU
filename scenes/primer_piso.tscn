@@ -60,13 +60,6 @@ polygon = PackedVector2Array(1057, 145, 1057, 495, 1808, 496, 1807, 143)
 [node name="player" parent="Entity_container" instance=ExtResource("3_kel1x")]
 position = Vector2(1014, 122)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1448, 70)
-limit_left = 10
-limit_top = -40
-limit_right = 1910
-limit_bottom = 650
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
@@ -117,44 +110,40 @@ shape = SubResource("RectangleShape2D_miomm")
 
 [node name="Interactions" type="Node2D" parent="."]
 
-[node name="Aula_1" type="Area2D" parent="Interactions"]
+[node name="Aula_1-1" type="Area2D" parent="Interactions"]
 script = ExtResource("6_e3o13")
-action_name = "Aula 1-x"
+action_name = "Aula 1-1"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_1"]
-position = Vector2(656.625, 50.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_1-1"]
+position = Vector2(1249, 44)
+shape = SubResource("RectangleShape2D_jl052")
+
+[node name="Aula_1-2" type="Area2D" parent="Interactions"]
+script = ExtResource("6_e3o13")
+action_name = "Aula 1-2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_1-2"]
+position = Vector2(1075, 44)
+shape = SubResource("RectangleShape2D_jl052")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactions/Aula_1-2"]
+position = Vector2(917, 44)
 shape = SubResource("RectangleShape2D_jl052")
 
 [node name="Aula_2" type="Area2D" parent="Interactions"]
 script = ExtResource("6_e3o13")
-action_name = "Aula 1-x"
+action_name = "Aula 1-3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_2"]
 position = Vector2(833, 44)
 shape = SubResource("RectangleShape2D_jl052")
 
-[node name="Aula_3" type="Area2D" parent="Interactions"]
+[node name="Aula_1" type="Area2D" parent="Interactions"]
 script = ExtResource("6_e3o13")
-action_name = "Aula 1-x"
+action_name = "Aula 1-4"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_3"]
-position = Vector2(917, 44)
-shape = SubResource("RectangleShape2D_jl052")
-
-[node name="Aula_4" type="Area2D" parent="Interactions"]
-script = ExtResource("6_e3o13")
-action_name = "Aula 1-x"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_4"]
-position = Vector2(1075, 44)
-shape = SubResource("RectangleShape2D_jl052")
-
-[node name="Aula_5" type="Area2D" parent="Interactions"]
-script = ExtResource("6_e3o13")
-action_name = "Aula 1-x"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_5"]
-position = Vector2(1249, 44)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_1"]
+position = Vector2(656.625, 50.25)
 shape = SubResource("RectangleShape2D_jl052")
 
 [node name="Lifia" type="Area2D" parent="Interactions"]
@@ -189,12 +178,8 @@ action_name = "Baños"
 position = Vector2(1337, 5)
 shape = SubResource("RectangleShape2D_r2l0h")
 
-[node name="Baño2" type="Area2D" parent="Interactions"]
-script = ExtResource("6_e3o13")
-action_name = "Baños"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Baño2"]
-position = Vector2(119, 3)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactions/Baño"]
+position = Vector2(1768, 8)
 shape = SubResource("RectangleShape2D_r2l0h")
 
 [connection signal="body_entered" from="1piso_patio_transition" to="." method="_on_piso_patio_transition_body_entered"]
