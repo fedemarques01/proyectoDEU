@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_e3o13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miomm"]
-size = Vector2(91, 62.75)
+size = Vector2(91, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evyxq"]
 size = Vector2(96, 30)
@@ -110,7 +110,7 @@ shape = SubResource("RectangleShape2D_miomm")
 position = Vector2(1554, 792)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1piso_pasillo_2_transition"]
-position = Vector2(-896, -174)
+position = Vector2(-896, -129.5)
 shape = SubResource("RectangleShape2D_miomm")
 
 [node name="InteractionManager" parent="." instance=ExtResource("5_bxdc4")]
