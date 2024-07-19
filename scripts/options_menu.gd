@@ -9,8 +9,9 @@ extends Control
 @onready var back_button = $Panel/VBoxContainer/back_button
 
 func _ready():
-	_print_nodes()
-	_connect_buttons()
+	#_print_nodes()
+	#_connect_buttons()
+	pass
 
 func _print_nodes():
 	print("controls_button: ", controls_button)

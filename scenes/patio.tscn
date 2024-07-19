@@ -47,13 +47,6 @@ polygon = PackedVector2Array(30, 1, 192, 0, 193, 112, 111, 112, 112, 509, 557, 5
 [node name="player" parent="Entity_container" instance=ExtResource("2_p5rqs")]
 position = Vector2(737, 619)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(818, 588)
-limit_left = -40
-limit_top = 0
-limit_right = 1560
-limit_bottom = 980
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
