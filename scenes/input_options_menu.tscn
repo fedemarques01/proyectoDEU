@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq1008aj3xg6c"]
+[gd_scene load_steps=3 format=3 uid="uid://bcielhi6wgwuk"]
 
 [ext_resource type="Script" path="res://scripts/input_options_menu.gd" id="1_cmmv6"]
 [ext_resource type="PackedScene" uid="uid://4t4cili1jmw2" path="res://scenes/input_button.tscn" id="2_tin47"]
@@ -32,6 +32,7 @@ text = "Seleccionar Controles
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
+process_mode = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -67,28 +68,55 @@ theme_override_constants/margin_bottom = 6
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="action_list" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="action_list" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="input_button" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/action_list" instance=ExtResource("2_tin47")]
+[node name="input_button1" parent="Panel/MarginContainer/VBoxContainer/action_list" instance=ExtResource("2_tin47")]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../../../reset_button")
+focus_neighbor_top = NodePath("../../reset_exit_container/reset_button")
+focus_neighbor_bottom = NodePath("../input_button2")
+focus_mode = 2
 
-[node name="reset_button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="input_button2" parent="Panel/MarginContainer/VBoxContainer/action_list" instance=ExtResource("2_tin47")]
 layout_mode = 2
-focus_mode = 0
+focus_neighbor_top = NodePath("../input_button1")
+focus_neighbor_bottom = NodePath("../input_button3")
+focus_mode = 2
+
+[node name="input_button3" parent="Panel/MarginContainer/VBoxContainer/action_list" instance=ExtResource("2_tin47")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../input_button2")
+focus_neighbor_bottom = NodePath("../input_button4")
+focus_mode = 2
+
+[node name="input_button4" parent="Panel/MarginContainer/VBoxContainer/action_list" instance=ExtResource("2_tin47")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../input_button3")
+focus_neighbor_bottom = NodePath("../input_button5")
+focus_mode = 2
+
+[node name="input_button5" parent="Panel/MarginContainer/VBoxContainer/action_list" instance=ExtResource("2_tin47")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../input_button4")
+focus_neighbor_bottom = NodePath("../../reset_exit_container/reset_button")
+focus_mode = 2
+
+[node name="reset_exit_container" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="reset_button" type="Button" parent="Panel/MarginContainer/VBoxContainer/reset_exit_container"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../action_list/input_button5")
+focus_neighbor_bottom = NodePath("../exit_button")
 text = "Resetear controles"
 
-[node name="exit_button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="exit_button" type="Button" parent="Panel/MarginContainer/VBoxContainer/reset_exit_container"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../ScrollContainer/action_list/input_button")
+focus_neighbor_top = NodePath("../reset_button")
+focus_neighbor_bottom = NodePath("../../action_list/input_button1")
 button_mask = 5
 text = "Volver"
 
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/reset_button" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/reset_exit_container/reset_button" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/reset_exit_container/exit_button" to="." method="_on_exit_button_pressed"]

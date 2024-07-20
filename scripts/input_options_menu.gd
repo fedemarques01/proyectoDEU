@@ -1,12 +1,20 @@
 extends Control
 
-@onready var input_button_scene = preload("res://scenes/input_button.tscn")
-@onready var action_list  = $Panel/MarginContainer/VBoxContainer/ScrollContainer/action_list
+@onready var action_list = $Panel/MarginContainer/VBoxContainer/action_list
+
+@onready var input_button1 = $Panel/MarginContainer/VBoxContainer/action_list/input_button1
+@onready var input_button2 = $Panel/MarginContainer/VBoxContainer/action_list/input_button2
+@onready var input_button3 = $Panel/MarginContainer/VBoxContainer/action_list/input_button3
+@onready var input_button4 = $Panel/MarginContainer/VBoxContainer/action_list/input_button4
+@onready var input_button5 = $Panel/MarginContainer/VBoxContainer/action_list/input_button5
+@onready var reset_button = $Panel/MarginContainer/VBoxContainer/reset_exit_container/reset_button
+@onready var exit_button = $Panel/MarginContainer/VBoxContainer/reset_exit_container/exit_button
 
 var is_remapping = false 
 var action_to_remap = null
 var remapping_button = null
-var current_focus_index = -1
+var current_focus_index = 0
+var buttons = []
 
 var input_actions = {
 	"move_up": "Mover para arriba",
@@ -17,81 +25,77 @@ var input_actions = {
 }
 
 func _ready():
-	_create_action_list()
+	buttons = [
+		input_button1, input_button2, input_button3, input_button4, input_button5,
+		reset_button, exit_button
+	]
+	_set_action_texts()
 	_set_initial_focus()
+	# _connect_buttons()
 	
-func _create_action_list():
-	InputMap.load_from_project_settings()
-
-	for item in action_list.get_children():
-		item.queue_free()
+func _set_action_texts():
+	var action_buttons = [input_button1, input_button2, input_button3, input_button4, input_button5]
+	var actions = input_actions.keys()
 	
-	print("amount of buttons: ", input_actions.size())
-	
-	for action in input_actions:
-		var button = input_button_scene.instantiate()
-		var action_label = button.find_child("action")
-		var input_label = button.find_child("input")
+	for i in range(action_buttons.size()):
+		var button = action_buttons[i]
+		var action = actions[i]
+		var action_label = button.get_node("MarginContainer/HBoxContainer/action")
+		var input_label = button.get_node("MarginContainer/HBoxContainer/input")
 		
 		action_label.text = input_actions[action]
 		
 		var events = InputMap.action_get_events(action)
 		
-		if events.size()>0:
+		if events.size() > 0:
 			input_label.text = events[0].as_text().trim_suffix(" (Physical)")
 		else:
 			input_label.text = ""
-			
-		action_list.add_child(button)
 		
-		button.focus_mode = Control.FOCUS_ALL
-		button.connect("focus_entered", Callable(self, "_on_button_focus_entered"))
-		button.connect("focus_exited", Callable(self, "_on_button_focus_exited"))
-
-		button.pressed.connect(_on_input_button_pressed.bind(button, action))
-		
-	print("amount of buttons: ", action_list.get_children().size())
+		# button.pressed.connect(_on_input_button_pressed.bind(button, action))
 
 func _set_initial_focus():
-	if action_list.get_child_count() > 0:
-		current_focus_index = 0
-		action_list.get_child(current_focus_index).grab_focus()
+	_grab_focus(input_button1)
+	current_focus_index = 0
+
+#func _connect_buttons():
+#   for button in buttons:
+# 		button.focus_mode = Control.FOCUS_ALL
+	# reset_button.connect("pressed", Callable(self, "_on_reset_button_pressed"))
+	# exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 
 func _on_input_button_pressed(button, action):
 	if is_remapping:
 		var previous_event = InputMap.action_get_events(action_to_remap)
 		if previous_event.size() > 0:
-			remapping_button.find_child("input").text = previous_event[0].as_text().trim_suffix(" (Physical)")
+			remapping_button.get_node("MarginContainer/HBoxContainer/input").text = previous_event[0].as_text().trim_suffix(" (Physical)")
 		else:
-			remapping_button.find_child("input").text = ""
+			remapping_button.get_node("MarginContainer/HBoxContainer/input").text = ""
 	else:
 		is_remapping = true
 		action_to_remap = action
 		remapping_button = button
-		button.find_child("input").text = "Seleccionar" 
-		
-		
+		button.get_node("MarginContainer/HBoxContainer/input").text = "Seleccionar" 
+
 func _input(event):
 	if is_remapping:
 		if (
-			event is InputEventKey ||
-			(event is InputEventMouseButton && event.pressed) || 
-			(event is InputEventJoypadButton && event.pressed)
+			event is InputEventKey or
+			(event is InputEventMouseButton and event.pressed) or 
+			(event is InputEventJoypadButton and event.pressed)
 		):
-			if (event is InputEventMouseButton && event.double_click):
-				event.double_click = false 
+			if event is InputEventMouseButton and event.doubleclick:
+				event.doubleclick = false 
 				
 			InputMap.action_erase_events(action_to_remap)
 			InputMap.action_add_event(action_to_remap, event)
 			_update_action_list(remapping_button, event)
-			print(str(_is_duplicate(event)))
 			if _is_duplicate(event):
-				remapping_button.find_child("input").text = "Ya está en uso"
+				remapping_button.get_node("MarginContainer/HBoxContainer/input").text = "Ya está en uso"
 			else:
 				InputMap.action_erase_events(action_to_remap)
 				InputMap.action_add_event(action_to_remap, event)
 				_update_action_list(remapping_button, event)
-			
 			
 			is_remapping = false
 			remapping_button = null 
@@ -114,31 +118,23 @@ func _is_duplicate(event):
 	return false
 
 func _focus_next():
-	if action_list.get_child_count() > 0:
-		current_focus_index = (current_focus_index + 1) % action_list.get_child_count()
-		print("Next focus index:", current_focus_index)
-		var next_child = action_list.get_child(current_focus_index)
-		if next_child.focus_mode == Control.FOCUS_ALL:
-			next_child.grab_focus()
-			print("Focusing on:", next_child)
+	current_focus_index = (current_focus_index + 1) % buttons.size()
+	_grab_focus(buttons[current_focus_index])
 
 func _focus_prev():
-	if action_list.get_child_count() > 0:
-		current_focus_index = (current_focus_index - 1 + action_list.get_child_count()) % action_list.get_child_count()
-		print("Previous focus index:", current_focus_index)
-		var prev_child = action_list.get_child(current_focus_index)
-		if prev_child.focus_mode == Control.FOCUS_ALL:
-			prev_child.grab_focus()
-			print("Focusing on:", prev_child)
+	current_focus_index = (current_focus_index - 1 + buttons.size()) % buttons.size()
+	_grab_focus(buttons[current_focus_index])
 
-		
-func _update_action_list(button, event):
-	button.find_child("input").text = event.as_text().trim_suffix(" (Physical)")
+
+func _grab_focus(button):
+	button.grab_focus()
 	
-
+func _update_action_list(button, event):
+	button.get_node("MarginContainer/HBoxContainer/input").text = event.as_text().trim_suffix(" (Physical)")
+	
 func _on_reset_button_pressed():
-	_create_action_list()
+	_set_action_texts()
 
 func _on_exit_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene("res://scenes/options_menu.tscn")
 
