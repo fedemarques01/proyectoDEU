@@ -32,19 +32,17 @@ func _connect_buttons():
 	back_button.connect("pressed", Callable(self, "_on_back_button_pressed"))
 
 func _on_controls_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/menus/input_options_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/input_options_menu.tscn")
 	
 func _on_music_toggle_button_pressed():
-	if AudioServer.is_bus_effect_enabled(0,AudioServer.get_bus_index("Master")):
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+	if AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")):
 		music_toggle_button.text = "Enable Music"
 	else:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 		music_toggle_button.text = "Disable Music"
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")))
 
 func _on_tts_toggle_button_pressed():
-	var tts_enabled = not global.tts_enabled
-	global.set_tts(tts_enabled)
+	global.tts_enabled = not global.tts_enabled
 
 func _on_choose_voice_button_pressed():
 	pass
