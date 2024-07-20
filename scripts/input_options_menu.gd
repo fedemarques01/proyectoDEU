@@ -136,5 +136,5 @@ func _on_reset_button_pressed():
 	_set_action_texts()
 
 func _on_exit_button_pressed():
-	get_tree().change_scene("res://scenes/options_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
