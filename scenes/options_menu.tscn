@@ -19,50 +19,54 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_sxnsc")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_right = 249.0
-offset_bottom = 184.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="controls_button" type="Button" parent="Panel/VBoxContainer"]
+[node name="Panel" type="CenterContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+
+[node name="title_label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Opciones de Juego"
+horizontal_alignment = 1
+
+[node name="controls_button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Cambiar controles"
 
-[node name="music_toggle_button" type="CheckButton" parent="Panel/VBoxContainer"]
+[node name="music_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Habilitar musica"
 
-[node name="tts_toggle_button" type="CheckButton" parent="Panel/VBoxContainer"]
+[node name="tts_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Habilitar TTS"
 
-[node name="choose_voice_button" type="OptionButton" parent="Panel/VBoxContainer"]
+[node name="choose_voice_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="font_size_button" type="OptionButton" parent="Panel/VBoxContainer"]
+[node name="font_size_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="font_color_picker_button" type="ColorPickerButton" parent="Panel/VBoxContainer"]
+[node name="font_color_picker_button" type="ColorPickerButton" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Elegir color de texto
 "
 
-[node name="back_button" type="Button" parent="Panel/VBoxContainer"]
+[node name="back_button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Volver"
 
-[connection signal="pressed" from="Panel/VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/music_toggle_button" to="." method="_on_music_toggle_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/tts_toggle_button" to="." method="_on_tts_toggle_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/choose_voice_button" to="." method="_on_choose_voice_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/font_size_button" to="." method="_on_font_size_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/font_color_picker_button" to="." method="_on_font_color_picker_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/music_toggle_button" to="." method="_on_music_toggle_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/tts_toggle_button" to="." method="_on_tts_toggle_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/choose_voice_dropdown" to="." method="_on_choose_voice_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/font_size_dropdown" to="." method="_on_font_size_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/font_color_picker_button" to="." method="_on_font_color_picker_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
