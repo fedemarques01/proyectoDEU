@@ -46,11 +46,14 @@ func _on_controls_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/input_options_menu.tscn")
 	
 func _on_music_toggle_button_pressed():
-	if AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")):
+	if MusicPlayer.is_music_playing():
 		music_toggle_button.text = "Habilitar musica"
+		MusicPlayer.stop_music()
+		
 	else:
 		music_toggle_button.text = "Musica habilitada"
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")))
+		MusicPlayer.play_music()
+
 
 func _on_tts_toggle_button_pressed():
 	if global.tts_enabled:
