@@ -9,10 +9,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -52.0
-offset_bottom = -52.0
+offset_left = -176.0
+offset_top = -124.0
+offset_right = -176.0
+offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_sxnsc")
 
 [node name="Panel" type="Panel" parent="."]
@@ -34,11 +38,11 @@ text = "Cambiar controles"
 
 [node name="music_toggle_button" type="CheckButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Activar/Desactivar Música"
+text = "Habilitar musica"
 
 [node name="tts_toggle_button" type="CheckButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Activar/Desactivar TTS"
+text = "Habilitar TTS"
 
 [node name="choose_voice_button" type="OptionButton" parent="Panel/VBoxContainer"]
 layout_mode = 2

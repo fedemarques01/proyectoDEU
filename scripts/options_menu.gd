@@ -9,18 +9,8 @@ extends Control
 @onready var back_button = $Panel/VBoxContainer/back_button
 
 func _ready():
-	#_print_nodes()
-	#_connect_buttons()
+	_connect_buttons()
 	pass
-
-func _print_nodes():
-	print("controls_button: ", controls_button)
-	print("music_toggle_button: ", music_toggle_button)
-	print("tts_toggle_button: ", tts_toggle_button)
-	print("choose_voice_button: ", choose_voice_button)
-	print("font_color_picker_button: ", font_color_picker_button)
-	print("font_size_button: ", font_size_button)
-	print("back_button: ", back_button)
 	
 func _connect_buttons():
 	controls_button.connect("pressed", Callable(self, "_on_controls_button_pressed"))
@@ -36,13 +26,18 @@ func _on_controls_button_pressed():
 	
 func _on_music_toggle_button_pressed():
 	if AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")):
-		music_toggle_button.text = "Enable Music"
+		music_toggle_button.text = "Habilitar musica"
 	else:
-		music_toggle_button.text = "Disable Music"
+		music_toggle_button.text = "Musica habilitada"
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")))
 
 func _on_tts_toggle_button_pressed():
-	global.tts_enabled = not global.tts_enabled
+	if global.tts_enabled:
+		tts_toggle_button.text = "TTS habilitado"
+		global.tts_enabled = false
+	else:
+		tts_toggle_button.text = "Habilitar TTS"
+		global.tts_enabled = true
 
 func _on_choose_voice_button_pressed():
 	pass
