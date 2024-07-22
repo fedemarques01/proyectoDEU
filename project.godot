@@ -24,6 +24,7 @@ general/text_to_speech=true
 
 global="*res://scripts/global.gd"
 InteractionManager="*res://scenes/interactions/InteractionManager.tscn"
+MusicPlayer="*res://scripts/music_player.gd"
 
 [input]
 

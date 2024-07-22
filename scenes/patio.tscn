@@ -10,6 +10,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28p1q"]
 size = Vector2(167.938, 61.2655)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfupk"]
+size = Vector2(89.5, 68)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsqyg"]
 size = Vector2(85, 72)
 
@@ -65,7 +68,7 @@ polygon = PackedVector2Array(30, 1, 192, 0, 193, 112, 111, 112, 112, 509, 557, 5
 [node name="Entity_container" type="Node2D" parent="."]
 
 [node name="player" parent="Entity_container" instance=ExtResource("2_p5rqs")]
-position = Vector2(737, 619)
+position = Vector2(926, 608)
 
 [node name="Pasillo1_transition" type="Area2D" parent="."]
 
@@ -90,6 +93,12 @@ shape = SubResource("RectangleShape2D_28p1q")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Pasillo2_transition"]
 position = Vector2(1469, 973.266)
 shape = SubResource("RectangleShape2D_28p1q")
+
+[node name="Primer_piso_transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Primer_piso_transition"]
+position = Vector2(1316.75, 851)
+shape = SubResource("RectangleShape2D_cfupk")
 
 [node name="Interactions" type="Node2D" parent="."]
 
@@ -162,3 +171,5 @@ vertical_alignment = 1
 [connection signal="body_exited" from="Pasillo1_transition" to="." method="_on_pasillo_1_transition_body_exited"]
 [connection signal="body_entered" from="Pasillo2_transition" to="." method="_on_pasillo_2_transition_body_entered"]
 [connection signal="body_exited" from="Pasillo2_transition" to="." method="_on_pasillo_2_transition_body_exited"]
+[connection signal="body_entered" from="Primer_piso_transition" to="." method="_on_primer_piso_transition_body_entered"]
+[connection signal="body_exited" from="Primer_piso_transition" to="." method="_on_primer_piso_transition_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sjubl31v884s"]
+[gd_scene load_steps=16 format=3 uid="uid://sjubl31v884s"]
 
 [ext_resource type="Script" path="res://scripts/primer_piso.gd" id="1_fqwvr"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_y4pke"]
@@ -8,13 +8,16 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_e3o13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miomm"]
-size = Vector2(91, 59)
+size = Vector2(72.5, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evyxq"]
 size = Vector2(96, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4o5v"]
 size = Vector2(89, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahmv4"]
+size = Vector2(46, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl052"]
 size = Vector2(54.75, 71.5)
@@ -92,6 +95,10 @@ position = Vector2(777, 396)
 position = Vector2(878.5, -461)
 shape = SubResource("RectangleShape2D_y4o5v")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="1piso_2piso_transition"]
+position = Vector2(-241, 254)
+shape = SubResource("RectangleShape2D_ahmv4")
+
 [node name="1piso_pasillo_1_transition" type="Area2D" parent="."]
 position = Vector2(777, 396)
 
@@ -103,10 +110,11 @@ shape = SubResource("RectangleShape2D_miomm")
 position = Vector2(1554, 792)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1piso_pasillo_2_transition"]
-position = Vector2(-896, -129.5)
+position = Vector2(-886.75, -139.5)
 shape = SubResource("RectangleShape2D_miomm")
 
 [node name="InteractionManager" parent="." instance=ExtResource("5_bxdc4")]
+position = Vector2(-3, 0)
 
 [node name="Interactions" type="Node2D" parent="."]
 

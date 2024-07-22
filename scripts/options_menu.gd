@@ -1,59 +1,78 @@
 extends Control
 
-@onready var controls_button = $Panel/VBoxContainer/controls_button
-@onready var music_toggle_button = $Panel/VBoxContainer/music_toggle_button
-@onready var tts_toggle_button = $Panel/VBoxContainer/tts_toggle_button
-@onready var choose_voice_button = $Panel/VBoxContainer/choose_voice_button
-@onready var font_color_picker_button = $Panel/VBoxContainer/font_color_picker_button
-@onready var font_size_button = $Panel/VBoxContainer/font_size_button
-@onready var back_button = $Panel/VBoxContainer/back_button
+@onready var controls_button = $CenterContainer/Panel/VBoxContainer/controls_button
+@onready var music_toggle_button = $CenterContainer/Panel/VBoxContainer/music_toggle_button
+@onready var tts_toggle_button = $CenterContainer/Panel/VBoxContainer/tts_toggle_button
+@onready var choose_voice_dropdown = $CenterContainer/Panel/VBoxContainer/choose_voice_dropdown
+@onready var font_color_picker_button = $CenterContainer/Panel/VBoxContainer/font_color_picker_button
+@onready var font_size_dropdown = $CenterContainer/Panel/VBoxContainer/font_size_dropdown
+@onready var back_button = $CenterContainer/Panel/VBoxContainer/back_button
+@onready var title_label = $CenterContainer/Panel/VBoxContainer/title_label
 
 func _ready():
-	#_print_nodes()
-	#_connect_buttons()
-	pass
-
-func _print_nodes():
-	print("controls_button: ", controls_button)
-	print("music_toggle_button: ", music_toggle_button)
-	print("tts_toggle_button: ", tts_toggle_button)
-	print("choose_voice_button: ", choose_voice_button)
-	print("font_color_picker_button: ", font_color_picker_button)
-	print("font_size_button: ", font_size_button)
-	print("back_button: ", back_button)
+	await get_tree().create_timer(0.1).timeout
+	controls_button.grab_focus()  # Set initial focus to the first button
+	_connect_buttons()
+	_setup_layout()
+	_populate_dropdowns()
 	
 func _connect_buttons():
 	controls_button.connect("pressed", Callable(self, "_on_controls_button_pressed"))
 	music_toggle_button.connect("pressed", Callable(self, "_on_music_toggle_button_pressed"))
 	tts_toggle_button.connect("pressed", Callable(self, "_on_tts_toggle_button_pressed"))
-	choose_voice_button.connect("pressed", Callable(self, "_on_choose_voice_button_pressed"))
-	font_color_picker_button.connect("pressed", Callable(self, "_on_font_color_picker_button_pressed"))
-	font_size_button.connect("pressed", Callable(self, "_on_font_size_button_pressed"))
+	choose_voice_dropdown.connect("item_selected", Callable(self, "_on_choose_voice_dropdown_selected"))
+	font_color_picker_button.connect("color_changed", Callable(self, "_on_font_color_picker_button_changed"))
+	font_size_dropdown.connect("item_selected", Callable(self, "_on_font_size_dropdown_selected"))
 	back_button.connect("pressed", Callable(self, "_on_back_button_pressed"))
 
+func _setup_layout():
+	$CenterContainer/Panel.custom_minimum_size = Vector2(400, 300) 
+	for child in $CenterContainer/Panel/VBoxContainer.get_children():
+		if child is Button or child is OptionButton or child is ColorPickerButton:
+			child.custom_minimum_size = Vector2(350, 50) 
+			child.custom_minimum_size = Vector2(350, 50)
+			child.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			child.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+func _populate_dropdowns():
+	var voices = DisplayServer.tts_get_voices_for_language("es")
+	for voice in voices:
+		choose_voice_dropdown.add_item(voice)
+	
+	for size in [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]:
+		font_size_dropdown.add_item(str(size))
+
 func _on_controls_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/menus/input_options_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/input_options_menu.tscn")
 	
 func _on_music_toggle_button_pressed():
-	if AudioServer.is_bus_effect_enabled(0,AudioServer.get_bus_index("Master")):
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
-		music_toggle_button.text = "Enable Music"
+	if MusicPlayer.is_music_playing():
+		music_toggle_button.text = "Habilitar musica"
+		MusicPlayer.stop_music()
+		
 	else:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
-		music_toggle_button.text = "Disable Music"
+		music_toggle_button.text = "Musica habilitada"
+		MusicPlayer.play_music()
+
 
 func _on_tts_toggle_button_pressed():
-	var tts_enabled = not global.tts_enabled
-	global.set_tts(tts_enabled)
+	if global.tts_enabled:
+		tts_toggle_button.text = "TTS habilitado"
+		global.tts_enabled = false
+	else:
+		tts_toggle_button.text = "Habilitar TTS"
+		global.tts_enabled = true
 
-func _on_choose_voice_button_pressed():
-	pass
+func _on_choose_voice_dropdown_selected(index):
+	global.voice_id = DisplayServer.tts_get_voices_for_language("es")[index]
 
-func _on_font_color_picker_button_pressed():
-	pass
+func _on_font_color_picker_button_changed(color):
+	global.font_color = color
 
-func _on_font_size_button_pressed():
-	pass
+func _on_font_size_dropdown_selected(index):
+	global.font_size = font_size_dropdown.get_item_text(index).to_int()
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	var sceneRoute = "res://scenes/" + global.current_scene + ".tscn"
+	get_tree().change_scene_to_file(sceneRoute)
+

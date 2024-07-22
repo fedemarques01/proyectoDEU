@@ -5,13 +5,16 @@ var transition_scene = false
 var transition_to = "entrada_facu"
 var change_camera = false
 
+var font_size: int = 14
+var font_color: Color = Color.WHITE
+
 #(311, 619) position default for "entrada_facu" start
 var player_transition_posx = 311
 var player_transition_posy = 619
 
 var pause_menu
 # TTS variables
-var tts_enabled = true
+var tts_enabled = false
 var voices = DisplayServer.tts_get_voices_for_language("es")
 var voice_id = voices[0]
 

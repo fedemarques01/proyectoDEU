@@ -4,6 +4,8 @@ var pause_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Entity_container/player.position.x = global.player_transition_posx
+	$Entity_container/player.position.y = global.player_transition_posy
 	
 	#prelodea el menu de pausa
 	var pause_menu_scene = preload("res://scenes/pause_menu.tscn")
@@ -19,4 +21,32 @@ func _input(event): #espera el input para pausar
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	change_scene()
+
+
+#en caso de cambiar de escena, busco la escena y seteo la current_scene en global
+func change_scene():
+	if global.transition_scene:
+		var filename = "res://scenes/" + global.transition_to + ".tscn"
+		get_tree().change_scene_to_file(filename)
+		global.current_scene = global.transition_to
+
+
+func calculate_pos_transition_primer_piso():
+	if $Entity_container/player.position.y < 300:
+		global.player_transition_posx = 1630
+		global.player_transition_posy = 60
+	else:
+		global.player_transition_posx = 700
+		global.player_transition_posy = 553
+
+func _on_piso_transition_body_entered(body):
+	if body.has_method("player"):
+		global.transition_to = "primer_piso"
+		calculate_pos_transition_primer_piso()
+		global.transition_scene = true
+
+
+func _on_piso_transition_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
