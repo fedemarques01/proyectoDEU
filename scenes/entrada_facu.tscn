@@ -9,24 +9,24 @@
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="7_yv2li"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/horario_biblioteca.gd" id="8_182xs"]
 
-[sub_resource type="FontFile" id="FontFile_b37yi"]
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
-cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
+[sub_resource type="FontFile" id="FontFile_f35cc"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0cnd7"]
-font = SubResource("FontFile_b37yi")
+font = SubResource("FontFile_f35cc")
 font_size = 27
 outline_size = 2
 
