@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=14 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
 [ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
@@ -23,6 +23,9 @@ size = Vector2(57, 185.5)
 size = Vector2(53, 93)
 
 [sub_resource type="FontFile" id="FontFile_3vq15"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -63,7 +66,7 @@ layer_3/tile_data = PackedInt32Array(589832, 458753, 56, 589833, 458753, 56, 589
 [node name="Collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(30, 1, 192, 0, 193, 112, 111, 112, 112, 509, 557, 507, 561, 466, 849, 466, 850, 529, 863, 528, 861, 462, 862, 197, 656, 298, 653, 227, 845, 134, 848, 1, 961, 1, 961, 526, 1584, 526, 1582, 914, 1503, 914, 1505, 989, 1423, 990, 1425, 910, 1380, 910, 1380, 879, 1381, 799, 1170, 800, 1168, 830, 1371, 831, 1369, 880, 1119, 878, 1119, 753, 1376, 754, 1375, 721, 1105, 722, 1103, 912, 736, 912, 736, 989, 639, 989, 640, 910, 128, 912, 129, 992, 31, 989, 32, 911, -17, 910, -14, 788, 33, 783, 29, 8, 20, -58, -54, -2, -84, 1034, 1628, 1030, 1637, -41, 30, -40)
+polygon = PackedVector2Array(30, 1, 192, 0, 193, 112, 111, 112, 112, 509, 557, 507, 561, 466, 849, 466, 850, 529, 863, 528, 861, 462, 862, 197, 656, 298, 653, 227, 845, 134, 848, 1, 961, 1, 961, 526, 1584, 526, 1582, 914, 1503, 914, 1505, 989, 1423, 990, 1425, 910, 1380, 910, 1380, 879, 1381, 799, 1170, 800, 1168, 830, 1371, 831, 1369, 880, 1119, 878, 1119, 753, 1376, 754, 1375, 721, 1105, 722, 1103, 912, 736, 912, 736, 958.315, 736, 989, 639, 989, 640, 910, 128, 912, 129, 992, 31, 989, 32, 911, -17, 910, -14, 788, 33, 783, 29, 8, 20, -58, -54, -2, -84, 1034, 1628, 1030, 1637, -41, 30, -40)
 
 [node name="Entity_container" type="Node2D" parent="."]
 
@@ -83,21 +86,21 @@ shape = SubResource("RectangleShape2D_28p1q")
 [node name="Pasillo2_transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pasillo2_transition"]
-position = Vector2(689, 971)
+position = Vector2(690, 991)
 shape = SubResource("RectangleShape2D_28p1q")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pasillo2_transition"]
-position = Vector2(86, 970)
+position = Vector2(75, 991)
 shape = SubResource("RectangleShape2D_28p1q")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Pasillo2_transition"]
-position = Vector2(1469, 973.266)
+position = Vector2(1454, 992)
 shape = SubResource("RectangleShape2D_28p1q")
 
 [node name="Primer_piso_transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Primer_piso_transition"]
-position = Vector2(1316.75, 851)
+position = Vector2(1323, 851)
 shape = SubResource("RectangleShape2D_cfupk")
 
 [node name="Interactions" type="Node2D" parent="."]

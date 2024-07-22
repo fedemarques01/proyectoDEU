@@ -107,7 +107,7 @@ shape = SubResource("RectangleShape2D_juw2b")
 [node name="Patio_transition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Patio_transition"]
-position = Vector2(324, 31)
+position = Vector2(319, 14)
 shape = SubResource("RectangleShape2D_pvfoy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Patio_transition"]
@@ -115,7 +115,7 @@ position = Vector2(1056, 31.375)
 shape = SubResource("RectangleShape2D_pvfoy")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Patio_transition"]
-position = Vector2(1913, 31.8125)
+position = Vector2(1910, 16)
 shape = SubResource("RectangleShape2D_pvfoy")
 
 [node name="Primer_piso_transition2" type="Area2D" parent="."]
