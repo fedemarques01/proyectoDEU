@@ -14,6 +14,7 @@ script = ExtResource("1_am56r")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 z_as_relative = false
 anchors_preset = 12
 anchor_top = 1.0
