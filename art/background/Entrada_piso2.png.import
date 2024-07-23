@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgvcc1nyg6kkg"
-path="res://.godot/imported/Screenshot_6.png-38a84480961ddf7b14f05f5ce690938d.ctex"
+uid="uid://dn0ydo2tjo8lt"
+path="res://.godot/imported/Entrada_piso2.png-c08f0d3f9f07288b143c2787a3093c84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/background/Screenshot_6.png"
-dest_files=["res://.godot/imported/Screenshot_6.png-38a84480961ddf7b14f05f5ce690938d.ctex"]
+source_file="res://art/background/Entrada_piso2.png"
+dest_files=["res://.godot/imported/Entrada_piso2.png-c08f0d3f9f07288b143c2787a3093c84.ctex"]
 
 [params]
 
