@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://sjubl31v884s"]
+[gd_scene load_steps=18 format=3 uid="uid://sjubl31v884s"]
 
 [ext_resource type="Script" path="res://scripts/primer_piso.gd" id="1_fqwvr"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_y4pke"]
 [ext_resource type="Texture2D" uid="uid://br4d135pvbene" path="res://art/Minimap_assets/map_placeholder.png" id="2_kv664"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="3_kel1x"]
-[ext_resource type="Texture2D" uid="uid://cgvcc1nyg6kkg" path="res://art/background/Screenshot_6.png" id="3_pm136"]
 [ext_resource type="Texture2D" uid="uid://dctiecwin6ejm" path="res://art/background/Pasillo_piso1.png" id="4_f8h7e"]
 [ext_resource type="Texture2D" uid="uid://bc2hdgaxwhsa2" path="res://art/background/Patio_piso1.png" id="5_alcu2"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="5_bxdc4"]
@@ -56,7 +55,6 @@ layer_3/tile_data = PackedInt32Array(589943, 327681, 1879048248, 655479, 327681,
 show_behind_parent = true
 position = Vector2(1607, 376.625)
 scale = Vector2(1.08494, 0.947526)
-texture = ExtResource("3_pm136")
 
 [node name="FondoPasillo" type="Sprite2D" parent="TileMap"]
 show_behind_parent = true
@@ -72,10 +70,9 @@ scale = Vector2(0.933446, 1.23737)
 texture = ExtResource("5_alcu2")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="Outer_collisions" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(255, -12, 267, 142, 944, 144, 945, 369, 770, 371, 773, 416, 945, 416, 944, 518, 15, 519, 16, 577, 64.2566, 576, 64, 598, 96, 598, 96.0765, 576, 223.356, 576, 224, 598, 257, 599, 258.004, 576, 383.162, 576, 384, 598, 416, 598, 417.103, 576, 512.562, 576, 512, 609, 623, 608, 623, 665, 559, 692, 559, 734, 623, 739, 625, 775, 563, 770, 559, 816, 688, 815, 689.339, 576, 847, 576, 848, 599, 879, 597, 880.258, 576, 1008, 576, 1008, 598, 1040, 598, 1039.9, 576, 1168.76, 576, 1168, 599, 1201, 598, 1201.72, 576, 1328.33, 576, 1327, 599, 1360, 598, 1360.54, 576, 1904, 576, 1903, 19, 1696.93, 16.8309, 1694, -63, 1631, -63, 1570, -93, 1569, -14, 1632, -13, 1631, 65, 1487, 64, 1488, -14, 1534, -16, 1535, -49, 1488, -66, 1408, -64, 1409, 16, 1297, 16, 1297, 66, 511, 65, 512, 36, 511, -128, 449, -132, 385, -105, 385, -63, 447, -63, 446, -10, 449, 63, 264, 61, 262, -13, 337, -204, 2053, -232, 2071, 903, -157, 850, 107, -12)
+polygon = PackedVector2Array(255, -12, 267, 142, 944, 144, 945, 369, 770, 371, 773, 416, 945, 416, 944, 518, 15, 519, 16, 577, 64.2566, 576, 64, 598, 96, 598, 96.0765, 576, 223.356, 576, 224, 598, 257, 599, 258.004, 576, 383.162, 576, 384, 598, 416, 598, 417.103, 576, 512.562, 576, 512, 609, 623, 608, 622, 675, 562, 677, 559, 734, 623, 739, 625, 775, 563, 770, 559, 816, 688, 815, 689.339, 576, 847, 576, 848, 599, 879, 597, 880.258, 576, 1008, 576, 1008, 598, 1040, 598, 1039.9, 576, 1168.76, 576, 1168, 599, 1201, 598, 1201.72, 576, 1328.33, 576, 1327, 599, 1360, 598, 1360.54, 576, 1904, 576, 1903, 19, 1696.93, 16.8309, 1694, -63, 1630, -74, 1572, -76, 1569, -14, 1632, -13, 1631, 65, 1487, 64, 1488, -14, 1538, -14, 1537, -61, 1488, -66, 1408, -64, 1409, 16, 1297, 16, 1297, 66, 511, 65, 512, 36, 511, -128, 449, -128, 387, -124, 385, -63, 447, -63, 446, -10, 449, 63, 264, 61, 262, -13, 337, -204, 2053, -232, 2071, 903, -157, 850, 107, -12)
 
 [node name="Inner_collisions" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(1057, 145, 1054, 527, 1806, 528, 1807, 143)
