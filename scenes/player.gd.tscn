@@ -354,6 +354,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Camera2D_primer_piso" type="Camera2D" parent="Cameras"]
+zoom = Vector2(2, 2)
 limit_left = 10
 limit_top = -221
 limit_right = 1910
