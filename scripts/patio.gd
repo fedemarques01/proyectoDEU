@@ -6,7 +6,7 @@ var pause_menu
 func _ready():
 	$Entity_container/player.position.x = global.player_transition_posx
 	$Entity_container/player.position.y = global.player_transition_posy
-	$Entity_container/player.scale = Vector2(2, 0.8)
+	$Entity_container/player.scale = Vector2(0.8, 0.8)
 	#prelodea el menu de pausa
 	var pause_menu_scene = preload("res://scenes/pause_menu.tscn")
 	pause_menu = pause_menu_scene.instantiate()
