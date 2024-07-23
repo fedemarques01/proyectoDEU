@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://sjubl31v884s"]
+[gd_scene load_steps=18 format=3 uid="uid://sjubl31v884s"]
 
 [ext_resource type="Script" path="res://scripts/primer_piso.gd" id="1_fqwvr"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_y4pke"]

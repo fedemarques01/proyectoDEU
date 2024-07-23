@@ -309,6 +309,13 @@ shape = SubResource("CircleShape2D_l6bmg")
 
 [node name="Cameras" type="Node2D" parent="."]
 
+[node name="Camera2D_segundo_piso" type="Camera2D" parent="Cameras"]
+zoom = Vector2(2, 2)
+limit_left = -70
+limit_top = -160
+limit_right = 1920
+limit_bottom = 914
+
 [node name="Camera2D_entrada_facu" type="Camera2D" parent="Cameras"]
 position = Vector2(3, -4)
 zoom = Vector2(2, 2)
@@ -348,7 +355,7 @@ zoom = Vector2(1.5, 1.5)
 limit_left = -40
 limit_top = -30
 limit_right = 1560
-limit_bottom = 980
+limit_bottom = 990
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
@@ -358,13 +365,3 @@ limit_left = 10
 limit_top = -221
 limit_right = 1920
 limit_bottom = 912
-
-[node name="Camera2D_segundo_piso" type="Camera2D" parent="Cameras"]
-position = Vector2(-2, 2)
-zoom = Vector2(2, 2)
-limit_left = -70
-limit_top = -160
-limit_right = 1920
-limit_bottom = 914
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
