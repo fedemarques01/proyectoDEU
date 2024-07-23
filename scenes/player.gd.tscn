@@ -325,7 +325,7 @@ position = Vector2(0, -18)
 enabled = false
 zoom = Vector2(2, 2)
 limit_left = 160
-limit_top = -65
+limit_top = -195
 limit_right = 2150
 limit_bottom = 316
 drag_horizontal_enabled = true
@@ -355,16 +355,16 @@ drag_vertical_enabled = true
 
 [node name="Camera2D_primer_piso" type="Camera2D" parent="Cameras"]
 limit_left = 10
-limit_top = -40
+limit_top = -221
 limit_right = 1910
-limit_bottom = 650
+limit_bottom = 912
 
 [node name="Camera2D_segundo_piso" type="Camera2D" parent="Cameras"]
 position = Vector2(3, -4)
 zoom = Vector2(2, 2)
 limit_left = -60
-limit_top = -60
+limit_top = -150
 limit_right = 1900
-limit_bottom = 680
+limit_bottom = 913
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

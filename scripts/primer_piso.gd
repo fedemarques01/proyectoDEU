@@ -47,7 +47,7 @@ func _on_piso_entrada_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "entrada_facu"
 		global.player_transition_posx = 369
-		global.player_transition_posy = 100
+		global.player_transition_posy = -21
 		global.transition_scene = true
 
 func _on_piso_entrada_transition_body_exited(body):
@@ -57,11 +57,11 @@ func _on_piso_entrada_transition_body_exited(body):
 
 func calculate_pos_transition_segundo_piso():
 	if $Entity_container/player.position.y < 300:
-		global.player_transition_posx = 1500
-		global.player_transition_posy = 100
+		global.player_transition_posx = 1439
+		global.player_transition_posy = -43
 	else:
-		global.player_transition_posx = 700
-		global.player_transition_posy = 550
+		global.player_transition_posx = 660
+		global.player_transition_posy = 706
 
 func _on_piso_2_piso_transition_body_entered(body):
 	if body.has_method("player"):
@@ -77,10 +77,9 @@ func _on_piso_2_piso_transition_body_exited(body):
 func _on_piso_pasillo_1_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_1"
-		global.player_transition_posx = 1343
-		global.player_transition_posy = 80
+		global.player_transition_posx = 1340
+		global.player_transition_posy = -80
 		global.transition_scene = true
-
 
 func _on_piso_pasillo_1_transition_body_exited(body):
 	if body.has_method("player"):
@@ -90,10 +89,9 @@ func _on_piso_pasillo_1_transition_body_exited(body):
 func _on_piso_pasillo_2_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "planta_baja_pasillo_2"
-		global.player_transition_posx = 1453
-		global.player_transition_posy = 100
+		global.player_transition_posx = 1505
+		global.player_transition_posy = 281
 		global.transition_scene = true
-
 
 func _on_piso_pasillo_2_transition_body_exited(body):
 	if body.has_method("player"):

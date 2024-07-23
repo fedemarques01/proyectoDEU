@@ -63,7 +63,7 @@ func _on_primer_piso_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "primer_piso"
 		global.player_transition_posx = 480
-		global.player_transition_posy = 140
+		global.player_transition_posy = -87
 		global.transition_scene = true
 
 
