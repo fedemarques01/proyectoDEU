@@ -34,11 +34,11 @@ func change_scene():
 
 func calculate_pos_transition_primer_piso():
 	if $Entity_container/player.position.y < 300:
-		global.player_transition_posx = 1630
-		global.player_transition_posy = 60
+		global.player_transition_posx = 1670
+		global.player_transition_posy = -30
 	else:
-		global.player_transition_posx = 700
-		global.player_transition_posy = 553
+		global.player_transition_posx = 660
+		global.player_transition_posy = 796
 
 func _on_piso_transition_body_entered(body):
 	if body.has_method("player"):

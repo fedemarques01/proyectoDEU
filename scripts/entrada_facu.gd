@@ -56,8 +56,8 @@ func _on_pb_pasillo_2_transition_body_exited(body):
 func _on_pb_1_piso_transition_body_entered(body):
 	if body.has_method("player"):
 		global.transition_to = "primer_piso"
-		global.player_transition_posx = 1445
-		global.player_transition_posy = 70
+		global.player_transition_posx = 1438
+		global.player_transition_posy = -28
 		global.transition_scene = true
 
 
