@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emtbm"]
 texture = SubResource("CanvasTexture_xgej8")
-modulate_color = Color(0.622359, 0.505134, 0.304965, 1)
+modulate_color = Color(0.0764462, 0.091445, 0.0914458, 0.611765)
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_am56r")
@@ -14,20 +14,21 @@ script = ExtResource("1_am56r")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-visible = false
 z_as_relative = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 128.0
 offset_top = -136.0
-offset_right = -8.0
-offset_bottom = -8.0
+offset_right = -128.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(0.886262, 0.886261, 0.886262, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_emtbm")
 horizontal_alignment = 1
