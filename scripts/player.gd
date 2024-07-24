@@ -9,7 +9,7 @@ func player():
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	add_to_group("player") 
-	global.test_start()
+	#global.test_start()
 
 func _physics_process(delta):
 	player_movement(delta)
