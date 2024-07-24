@@ -57,3 +57,5 @@ func interact():
 
 func update_label_message(message: String):
 	label.text = message
+	if global.tts_enabled:
+		global.speak(message)
