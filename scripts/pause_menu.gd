@@ -10,7 +10,6 @@ func _ready():
 	hide()
 	_connect_buttons()
 	await get_tree().create_timer(0.1).timeout
-	return_button.grab_focus()
 	_resize_buttons()
 
 	

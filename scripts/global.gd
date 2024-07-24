@@ -39,4 +39,6 @@ func toggle_pause():
 		get_tree().paused = false
 	else:
 		pause_menu.show()
+		pause_menu.return_button.focus_mode = Control.FOCUS_ALL
+		pause_menu.return_button.grab_focus()
 		get_tree().paused = true
