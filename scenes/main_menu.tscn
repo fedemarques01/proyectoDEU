@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwme2scx3x4tx"]
+[gd_scene load_steps=5 format=3 uid="uid://cwme2scx3x4tx"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ruuug"]
+[ext_resource type="Texture2D" uid="uid://kpspit0f86vr" path="res://art/background/facu.jpg" id="2_5tkmi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sstay"]
 
@@ -22,6 +23,14 @@ mouse_default_cursor_shape = 2
 theme = SubResource("Theme_y8kft")
 script = ExtResource("1_ruuug")
 metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_5tkmi")
+expand_mode = 4
+stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
