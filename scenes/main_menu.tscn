@@ -44,6 +44,7 @@ text = "Menu Principal"
 horizontal_alignment = 1
 
 [node name="start_button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../quit_button")
 mouse_default_cursor_shape = 2

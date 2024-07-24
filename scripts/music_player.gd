@@ -8,7 +8,7 @@ func _ready():
 	var music_stream = preload("res://music/meet-the-fish-loop.wav") as AudioStream
 	music_player.stream = music_stream
 	music_player.connect("finished", Callable(self, "_on_music_finished"))
-	music_player.play()
+
 
 func play_music():
 	music_player.play()

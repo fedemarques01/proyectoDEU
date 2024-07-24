@@ -1,4 +1,8 @@
 extends Control
+@onready var start_button = %start_button
+@onready var tutorial_button = $VBoxContainer/tutorial_button
+@onready var options_button = $VBoxContainer/options_button
+@onready var quit_button = $VBoxContainer/quit_button
 
 func _ready():
 	var button = $VBoxContainer/start_button
@@ -8,10 +12,11 @@ func _ready():
 
 func resize_buttons():
 	$VBoxContainer.custom_minimum_size = Vector2(300, 400)
-	$VBoxContainer/start_button.custom_minimum_size = Vector2(200, 50)
-	$VBoxContainer/options_button.custom_minimum_size = Vector2(200, 50)
-	$VBoxContainer/tutorial_button.custom_minimum_size = Vector2(200, 50)
-	$VBoxContainer/quit_button.custom_minimum_size = Vector2(200, 50)
+	start_button.custom_minimum_size = Vector2(200, 50)
+	options_button.custom_minimum_size = Vector2(200, 50)
+	tutorial_button.custom_minimum_size = Vector2(200, 50)
+	quit_button.custom_minimum_size = Vector2(200, 50)
+
 	
 func _on_start_button_pressed():
 	global.current_scene = "entrada_facu"
@@ -26,4 +31,5 @@ func _on_tutorial_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+	
 

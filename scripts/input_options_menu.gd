@@ -10,6 +10,7 @@ extends Control
 @onready var reset_button = $Panel/MarginContainer/VBoxContainer/reset_exit_container/reset_button
 @onready var exit_button = $Panel/MarginContainer/VBoxContainer/reset_exit_container/exit_button
 
+
 var is_remapping = false 
 var action_to_remap = null
 var remapping_button = null
@@ -31,7 +32,33 @@ func _ready():
 	]
 	_set_action_texts()
 	_set_initial_focus()
-	# _connect_buttons()
+	_set_button_sizing()
+func _set_button_sizing():
+	$Panel.custom_minimum_size = Vector2(400, 300) 
+
+
+	$Panel.size_flags_horizontal = Control.SIZE_FILL
+	$Panel.size_flags_vertical = Control.SIZE_FILL
+
+	$Panel/MarginContainer.size_flags_horizontal = Control.SIZE_FILL
+	$Panel/MarginContainer.size_flags_vertical = Control.SIZE_FILL
+
+	$Panel/MarginContainer/VBoxContainer.size_flags_horizontal = Control.SIZE_FILL
+	$Panel/MarginContainer/VBoxContainer.size_flags_vertical = Control.SIZE_FILL
+
+
+	for child in $Panel/MarginContainer/VBoxContainer/action_list.get_children():
+		if child is Button:
+			child.custom_minimum_size = Vector2(350, 50) 
+			child.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			child.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+	for child in $Panel/MarginContainer/VBoxContainer/reset_exit_container.get_children():
+		if child is Button:
+			child.custom_minimum_size = Vector2(350, 50) 
+			child.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			child.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
 	
 func _set_action_texts():
 	var action_buttons = [input_button1, input_button2, input_button3, input_button4, input_button5]
@@ -58,6 +85,15 @@ func _set_initial_focus():
 	_grab_focus(input_button1)
 	current_focus_index = 0
 
+func _on_button_focus(button):
+	button.modulate = Color(0.8, 0.8, 0.8)  
+
+func _on_button_blur(button):
+	button.modulate = Color(1, 1, 1)  
+
+func _grab_focus(button):
+	button.grab_focus()
+	button.modulate = Color(0.8, 0.8, 0.8)  
 #func _connect_buttons():
 #   for button in buttons:
 # 		button.focus_mode = Control.FOCUS_ALL
@@ -125,9 +161,6 @@ func _focus_prev():
 	current_focus_index = (current_focus_index - 1 + buttons.size()) % buttons.size()
 	_grab_focus(buttons[current_focus_index])
 
-
-func _grab_focus(button):
-	button.grab_focus()
 	
 func _update_action_list(button, event):
 	button.get_node("MarginContainer/HBoxContainer/input").text = event.as_text().trim_suffix(" (Physical)")
