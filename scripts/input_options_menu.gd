@@ -79,7 +79,7 @@ func _set_action_texts():
 		else:
 			input_label.text = ""
 		
-		# button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		button.pressed.connect(_on_input_button_pressed.bind(button, action))
 
 func _set_initial_focus():
 	_grab_focus(input_button1)
@@ -94,11 +94,11 @@ func _on_button_blur(button):
 func _grab_focus(button):
 	button.grab_focus()
 	button.modulate = Color(0.8, 0.8, 0.8)  
-#func _connect_buttons():
-#   for button in buttons:
-# 		button.focus_mode = Control.FOCUS_ALL
-	# reset_button.connect("pressed", Callable(self, "_on_reset_button_pressed"))
-	# exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
+func _connect_buttons():
+	for button in buttons:
+		button.focus_mode = Control.FOCUS_ALL
+	reset_button.connect("pressed", Callable(self, "_on_reset_button_pressed"))
+	exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 
 func _on_input_button_pressed(button, action):
 	if is_remapping:
