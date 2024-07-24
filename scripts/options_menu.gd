@@ -39,7 +39,7 @@ func _populate_dropdowns():
 	for voice in voices:
 		choose_voice_dropdown.add_item(voice)
 	
-	for size in [10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]:
+	for size in [10, 12, 14, 16, 18]:
 		font_size_dropdown.add_item(str(size))
 
 func _on_controls_button_pressed():
