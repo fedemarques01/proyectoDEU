@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://pg252xxqa2j"]
+[gd_scene load_steps=13 format=3 uid="uid://pg252xxqa2j"]
 
 [ext_resource type="Script" path="res://scripts/segundo_piso.gd" id="1_07pfl"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_knau4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="3_yxysc"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="4_0na37"]
 [ext_resource type="Texture2D" uid="uid://bc2hdgaxwhsa2" path="res://art/background/Patio_piso1.png" id="4_wiowa"]
+[ext_resource type="Texture2D" uid="uid://fnqfesmgi0nk" path="res://art/Minimap_assets/segundo_piso.png" id="7_3kq6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p82s6"]
 size = Vector2(86, 85)
@@ -15,6 +16,30 @@ size = Vector2(72, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_378hy"]
 size = Vector2(91, 59)
+
+[sub_resource type="FontFile" id="FontFile_ttfy8"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajxyn"]
+font = SubResource("FontFile_ttfy8")
+font_size = 27
+outline_size = 2
 
 [node name="segundo_piso" type="Node2D"]
 script = ExtResource("1_07pfl")
@@ -44,10 +69,9 @@ scale = Vector2(1.53087, 1.39811)
 texture = ExtResource("4_wiowa")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(1057, 63, 1059, 143, 1327, 143, 1329, 499, -22, 497, -22, 528, -13, 529, -15, 575, 142, 575, 142, 598, 176, 599, 176, 577, 224, 575, 224, 597, 253, 597, 255, 577, 382, 575, 385, 598, 415, 597, 416, 576, 529, 577, 533, 606, 626, 606, 621, 675, 561, 684, 564, 738, 624, 738, 624, 770, 573, 765, 572, 817, 687, 816, 686, 576, 1410, 576, 1411, 145, 1904, 145, 1902, 16, 1618, 16, 1616, 63, 1487, 63, 1488, -14, 1551, -16, 1550, -70, 1488, -78, 1410, -83, 1410, 19, 1294, 14, 1296, 62, 1058, 63, 860, -134, 1981, -109, 2021, 705, 503, 900, -206, 531, 856, -133)
+polygon = PackedVector2Array(1057, 63, 1059, 143, 1327, 143, 1329, 499, -22, 497, -22, 528, -13, 529, -15, 575, 142, 575, 142, 598, 176, 599, 176, 577, 224, 575, 224, 597, 253, 597, 255, 577, 382, 575, 385, 598, 415, 597, 416, 576, 529, 577, 533, 606, 626, 606, 621, 675, 561, 684, 564, 738, 624, 738, 623, 777, 574, 778, 572, 817, 687, 816, 686, 576, 1410, 576, 1411, 145, 1904, 145, 1902, 16, 1618, 16, 1616, 63, 1487, 63, 1488, -14, 1551, -16, 1551, -70, 1410, -83, 1410, 19, 1294, 14, 1296, 62, 1058, 63, 860, -134, 1981, -109, 2021, 705, 503, 900, -206, 531, 856, -133)
 
 [node name="Entity_container" type="Node2D" parent="."]
 
@@ -93,6 +117,36 @@ limit_left = -70
 limit_top = -160
 limit_right = 1920
 limit_bottom = 913
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1144.0
+offset_right = 1440.0
+offset_bottom = 214.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(0, 0, 0, 0.690196)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1157.5
+offset_top = 5.0
+offset_right = 1427.5
+offset_bottom = 172.0
+texture = ExtResource("7_3kq6h")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1143.75
+offset_top = 168.75
+offset_right = 1436.75
+offset_bottom = 205.75
+text = "Segundo piso"
+label_settings = SubResource("LabelSettings_ajxyn")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="1piso_transition" to="." method="_on_piso_transition_body_entered"]
 [connection signal="body_exited" from="1piso_transition" to="." method="_on_piso_transition_body_exited"]

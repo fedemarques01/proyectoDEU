@@ -22,7 +22,7 @@ size = Vector2(57, 185.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jvc5"]
 size = Vector2(53, 93)
 
-[sub_resource type="FontFile" id="FontFile_3vq15"]
+[sub_resource type="FontFile" id="FontFile_frv7b"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -42,7 +42,7 @@ cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p3fmn"]
-font = SubResource("FontFile_3vq15")
+font = SubResource("FontFile_frv7b")
 font_size = 27
 outline_size = 2
 
