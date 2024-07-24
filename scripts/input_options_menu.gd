@@ -33,6 +33,8 @@ func _ready():
 	_set_action_texts()
 	_set_initial_focus()
 	_set_button_sizing()
+	_connect_buttons()
+	
 func _set_button_sizing():
 	$Panel.custom_minimum_size = Vector2(400, 300) 
 
@@ -94,6 +96,7 @@ func _on_button_blur(button):
 func _grab_focus(button):
 	button.grab_focus()
 	button.modulate = Color(0.8, 0.8, 0.8)  
+	
 func _connect_buttons():
 	for button in buttons:
 		button.focus_mode = Control.FOCUS_ALL

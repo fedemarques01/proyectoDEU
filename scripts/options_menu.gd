@@ -104,5 +104,6 @@ func linear_to_db(linear):
 	if linear == 0:
 		return -80 
 	return 20 * log(linear)
+	
 func _process(delta):
 	_update_music_slider_status()
