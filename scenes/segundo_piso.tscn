@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pg252xxqa2j"]
+[gd_scene load_steps=14 format=3 uid="uid://pg252xxqa2j"]
 
 [ext_resource type="Script" path="res://scripts/segundo_piso.gd" id="1_07pfl"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_knau4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="4_0na37"]
 [ext_resource type="Texture2D" uid="uid://bc2hdgaxwhsa2" path="res://art/background/Patio_piso1.png" id="4_wiowa"]
 [ext_resource type="Texture2D" uid="uid://fnqfesmgi0nk" path="res://art/Minimap_assets/segundo_piso.png" id="7_3kq6h"]
+[ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="7_j66pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p82s6"]
 size = Vector2(86, 85)
@@ -84,6 +85,9 @@ position = Vector2(1424, 108)
 script = ExtResource("4_0na37")
 action_name = "Lidi"
 
+[node name="Icon" parent="Interactions/Lidi" instance=ExtResource("7_j66pv")]
+position = Vector2(1066, 96)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Lidi"]
 position = Vector2(1047, 100.5)
 shape = SubResource("RectangleShape2D_p82s6")
@@ -91,6 +95,12 @@ shape = SubResource("RectangleShape2D_p82s6")
 [node name="Linti" type="Area2D" parent="Interactions"]
 script = ExtResource("4_0na37")
 action_name = "Linti"
+
+[node name="Icon" parent="Interactions/Linti" instance=ExtResource("7_j66pv")]
+position = Vector2(1825, 127)
+
+[node name="Icon2" parent="Interactions/Linti" instance=ExtResource("7_j66pv")]
+position = Vector2(1340, 298)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Linti"]
 position = Vector2(1824, 167)

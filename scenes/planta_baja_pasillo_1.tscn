@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://doxih0j1xv67e"]
+[gd_scene load_steps=16 format=3 uid="uid://doxih0j1xv67e"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_muo3p"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_1.gd" id="1_rswto"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dnel7fkw7lm07" path="res://art/Minimap_assets/pasillo1.png" id="3_ckpla"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="5_5fcan"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_f7j7l"]
+[ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="7_1crvj"]
 
 [sub_resource type="FontFile" id="FontFile_c5ud5"]
 cache/0/16/0/ascent = 0.0
@@ -137,9 +138,15 @@ action_name = "Aula 1"
 position = Vector2(2050, 76)
 shape = SubResource("RectangleShape2D_kwku2")
 
+[node name="Icon" parent="Interactions/Aula_1" instance=ExtResource("7_1crvj")]
+position = Vector2(2048, 6)
+
 [node name="Aula_2" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Aula 2"
+
+[node name="Icon" parent="Interactions/Aula_2" instance=ExtResource("7_1crvj")]
+position = Vector2(1904, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_2"]
 position = Vector2(1915, 80)
@@ -149,6 +156,9 @@ shape = SubResource("RectangleShape2D_kwku2")
 script = ExtResource("6_f7j7l")
 action_name = "Aula 3"
 
+[node name="Icon" parent="Interactions/Aula_3" instance=ExtResource("7_1crvj")]
+position = Vector2(1840, 4)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_3"]
 position = Vector2(1826, 78)
 shape = SubResource("RectangleShape2D_kwku2")
@@ -157,26 +167,34 @@ shape = SubResource("RectangleShape2D_kwku2")
 script = ExtResource("6_f7j7l")
 action_name = "Aula 4"
 
+[node name="Icon" parent="Interactions/Aula_4" instance=ExtResource("7_1crvj")]
+position = Vector2(1681, 4)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_4"]
 position = Vector2(1682, 75)
-shape = SubResource("RectangleShape2D_7xfud")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactions/Aula_4"]
-position = Vector2(1504, 75)
 shape = SubResource("RectangleShape2D_7xfud")
 
 [node name="Aula_5" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Aula 5"
 
+[node name="Icon" parent="Interactions/Aula_5" instance=ExtResource("7_1crvj")]
+position = Vector2(1313, 163)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_5"]
-position = Vector2(1264, 182)
+position = Vector2(1264, 181)
 scale = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_kwku2")
+
+[node name="Icon2" parent="Interactions/Aula_5" instance=ExtResource("7_1crvj")]
+position = Vector2(1216, 162)
 
 [node name="Aula_6" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Aula 6"
+
+[node name="Icon" parent="Interactions/Aula_6" instance=ExtResource("7_1crvj")]
+position = Vector2(880, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_6"]
 position = Vector2(881, 74)
@@ -186,6 +204,9 @@ shape = SubResource("RectangleShape2D_kwku2")
 script = ExtResource("6_f7j7l")
 action_name = "Aula 7"
 
+[node name="Icon" parent="Interactions/Aula_7" instance=ExtResource("7_1crvj")]
+position = Vector2(800, 5)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_7"]
 position = Vector2(800, 74)
 shape = SubResource("RectangleShape2D_kwku2")
@@ -193,6 +214,9 @@ shape = SubResource("RectangleShape2D_kwku2")
 [node name="Aula_8" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Aula 8"
+
+[node name="Icon" parent="Interactions/Aula_8" instance=ExtResource("7_1crvj")]
+position = Vector2(641, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_8"]
 position = Vector2(639, 72)
@@ -206,9 +230,15 @@ action_name = "Aula 9"
 position = Vector2(448, 70)
 shape = SubResource("RectangleShape2D_kwku2")
 
+[node name="Icon" parent="Interactions/Aula_9" instance=ExtResource("7_1crvj")]
+position = Vector2(448, 4)
+
 [node name="Aula_10A" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Aula 10A"
+
+[node name="Icon" parent="Interactions/Aula_10A" instance=ExtResource("7_1crvj")]
+position = Vector2(256, 163)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_10A"]
 position = Vector2(255.5, 187)
@@ -218,13 +248,20 @@ shape = SubResource("RectangleShape2D_2f5wp")
 script = ExtResource("6_f7j7l")
 action_name = "Cefi"
 
+[node name="Icon" parent="Interactions/Cefi" instance=ExtResource("7_1crvj")]
+position = Vector2(232, 89)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Cefi"]
-position = Vector2(221, 92)
+visible = false
+position = Vector2(216, 97)
 shape = SubResource("RectangleShape2D_kwku2")
 
 [node name="Baños" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Baños"
+
+[node name="Icon" parent="Interactions/Baños" instance=ExtResource("7_1crvj")]
+position = Vector2(1082, -33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Baños"]
 position = Vector2(1078, 42)
@@ -233,6 +270,9 @@ shape = SubResource("RectangleShape2D_e7dwr")
 [node name="Fotocopiadora" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
 action_name = "Fotocopiadora"
+
+[node name="Icon" parent="Interactions/Fotocopiadora" instance=ExtResource("7_1crvj")]
+position = Vector2(1218, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Fotocopiadora"]
 position = Vector2(1219.5, 66.5)

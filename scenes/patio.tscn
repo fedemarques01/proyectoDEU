@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=15 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
 [ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/horario_buffet.gd" id="5_tk43t"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_vbo6q"]
 [ext_resource type="Texture2D" uid="uid://bv177t1f12ud1" path="res://art/Minimap_assets/patio.png" id="6_5pflx"]
+[ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="6_trb2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28p1q"]
 size = Vector2(167.938, 61.2655)
@@ -112,12 +113,21 @@ script = ExtResource("5_tk43t")
 script = ExtResource("5_vbo6q")
 action_name = "Buffet: Ver horario de atencion"
 
+[node name="Icon" parent="Interactions/Horarios_del_buffet/Buffet" instance=ExtResource("6_trb2n")]
+position = Vector2(432, 427)
+
+[node name="Icon2" parent="Interactions/Horarios_del_buffet/Buffet" instance=ExtResource("6_trb2n")]
+position = Vector2(160, 109)
+
+[node name="Icon3" parent="Interactions/Horarios_del_buffet/Buffet" instance=ExtResource("6_trb2n")]
+position = Vector2(662, 227)
+
 [node name="Entrada1" type="CollisionShape2D" parent="Interactions/Horarios_del_buffet/Buffet"]
 position = Vector2(433, 499)
 shape = SubResource("RectangleShape2D_lsqyg")
 
 [node name="Entrada2" type="CollisionShape2D" parent="Interactions/Horarios_del_buffet/Buffet"]
-position = Vector2(651, 255)
+position = Vector2(640, 250)
 shape = SubResource("RectangleShape2D_lsqyg")
 
 [node name="Entrada3" type="CollisionShape2D" parent="Interactions/Horarios_del_buffet/Buffet"]
@@ -128,7 +138,14 @@ shape = SubResource("RectangleShape2D_lsqyg")
 script = ExtResource("5_vbo6q")
 action_name = "Aula 11"
 
+[node name="Icon2" parent="Interactions/Aula_11" instance=ExtResource("6_trb2n")]
+position = Vector2(33, 573)
+
+[node name="Icon" parent="Interactions/Aula_11" instance=ExtResource("6_trb2n")]
+position = Vector2(33, 479)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_11"]
+visible = false
 position = Vector2(19.5, 527.25)
 shape = SubResource("RectangleShape2D_66o4l")
 
@@ -136,7 +153,11 @@ shape = SubResource("RectangleShape2D_66o4l")
 script = ExtResource("5_vbo6q")
 action_name = "Aula 10B"
 
+[node name="Icon" parent="Interactions/Aula_10B2" instance=ExtResource("6_trb2n")]
+position = Vector2(33, 257)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Aula_10B2"]
+visible = false
 position = Vector2(19, 259)
 shape = SubResource("RectangleShape2D_1jvc5")
 
