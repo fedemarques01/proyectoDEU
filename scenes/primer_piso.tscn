@@ -253,7 +253,6 @@ position = Vector2(1768, 8)
 shape = SubResource("RectangleShape2D_r2l0h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 
