@@ -37,8 +37,8 @@ func calculate_pos_transition_primer_piso():
 		global.player_transition_posx = 1670
 		global.player_transition_posy = -30
 	else:
-		global.player_transition_posx = 660
-		global.player_transition_posy = 796
+		global.player_transition_posx = 650
+		global.player_transition_posy = 767
 
 func _on_piso_transition_body_entered(body):
 	if body.has_method("player"):
