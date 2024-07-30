@@ -1,8 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://5anhx7il2irw"]
+[gd_scene load_steps=43 format=3 uid="uid://5anhx7il2irw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uaxqb"]
 [ext_resource type="Texture2D" uid="uid://c8akyrglba21q" path="res://art/character/player.png" id="2_0shyb"]
 [ext_resource type="Script" path="res://scripts/CameraFix.gd" id="3_bfyof"]
+[ext_resource type="PackedScene" uid="uid://djwifje6qstpc" path="res://scenes/ZoneLabel.tscn" id="4_ve8dj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhecx"]
 atlas = ExtResource("2_0shyb")
@@ -374,3 +375,5 @@ limit_top = -160
 limit_right = 1920
 limit_bottom = 914
 script = ExtResource("3_bfyof")
+
+[node name="ZoneLabel" parent="." instance=ExtResource("4_ve8dj")]

@@ -11,6 +11,30 @@
 [ext_resource type="Texture2D" uid="uid://b5ib468h6jjc4" path="res://art/Minimap_assets/primer_piso.png" id="9_4eer6"]
 [ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="9_dyesb"]
 
+[sub_resource type="FontFile" id="FontFile_3vq15"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_31ih2"]
+font = SubResource("FontFile_3vq15")
+font_size = 27
+outline_size = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miomm"]
 size = Vector2(45, 81)
 
@@ -37,30 +61,6 @@ size = Vector2(41.6875, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2l0h"]
 size = Vector2(73.5, 53.5)
-
-[sub_resource type="FontFile" id="FontFile_3vq15"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_31ih2"]
-font = SubResource("FontFile_3vq15")
-font_size = 27
-outline_size = 2
 
 [node name="primer_piso" type="Node2D"]
 script = ExtResource("1_fqwvr")
@@ -100,7 +100,7 @@ texture = ExtResource("5_alcu2")
 visible = false
 
 [node name="Outer_collisions" type="CollisionPolygon2D" parent="Collisions"]
-polygon = PackedVector2Array(269, -12, 274, 145, 944, 144, 945, 369, 770, 371, 773, 416, 945, 416, 944, 518, 15, 519, 16, 577, 64.2566, 576, 64, 598, 96, 598, 96.0765, 576, 223.356, 576, 224, 598, 257, 599, 258.004, 576, 383.162, 576, 384, 598, 416, 598, 417.103, 576, 512.562, 576, 512, 609, 623, 608, 620, 670, 558, 684, 559, 734, 623, 739, 623, 773, 563, 770, 559, 816, 688, 815, 689.339, 576, 847, 576, 848, 599, 879, 597, 880.258, 576, 1008, 576, 1008, 598, 1040, 598, 1039.9, 576, 1168.76, 576, 1168, 599, 1201, 598, 1201.72, 576, 1328.33, 576, 1327, 599, 1360, 598, 1360.54, 576, 1904, 576, 1903, 19, 1696.93, 16.8309, 1697, -65, 1631, -65, 1571, -66, 1569, -14, 1632, -13, 1631, 65, 1487, 64, 1488, -14, 1534, -16, 1536, -62, 1489, -64, 1408, -64, 1409, 16, 1297, 16, 1297, 66, 511, 65, 512, 36, 511, -128, 449, -132, 385, -105, 385, -63, 447, -63, 446, -10, 449, 63, 273, 64, 271, -12, 337, -204, 2053, -232, 2071, 903, -157, 850, 107, -12)
+polygon = PackedVector2Array(269, -12, 274, 145, 944, 144, 945, 369, 770, 371, 773, 416, 945, 416, 944, 518, 15, 519, 16, 577, 64.2566, 576, 64, 598, 96, 598, 96.0765, 576, 223.356, 576, 224, 598, 257, 599, 258.004, 576, 383.162, 576, 384, 598, 416, 598, 417.103, 576, 512.562, 576, 512, 609, 623, 608, 622, 661, 557, 678, 559, 734, 623, 739, 624, 761, 563, 770, 559, 816, 688, 815, 689.339, 576, 847, 576, 848, 599, 879, 597, 880.258, 576, 1008, 576, 1008, 598, 1040, 598, 1039.9, 576, 1168.76, 576, 1168, 599, 1201, 598, 1201.72, 576, 1328.33, 576, 1327, 599, 1360, 598, 1360.54, 576, 1904, 576, 1903, 19, 1696.93, 16.8309, 1697, -65, 1631, -65, 1571, -66, 1569, -14, 1632, -13, 1631, 65, 1487, 64, 1488, -14, 1534, -16, 1536, -62, 1489, -64, 1408, -64, 1409, 16, 1297, 16, 1297, 66, 511, 65, 512, 36, 511, -128, 449, -132, 385, -105, 385, -63, 447, -63, 446, -10, 449, 63, 273, 64, 271, -12, 337, -204, 2053, -232, 2071, 903, -157, 850, 107, -12)
 
 [node name="Inner_collisions" type="CollisionPolygon2D" parent="Collisions"]
 polygon = PackedVector2Array(1057, 145, 1054, 527, 1806, 528, 1807, 143)
@@ -109,6 +109,36 @@ polygon = PackedVector2Array(1057, 145, 1054, 527, 1806, 528, 1807, 143)
 
 [node name="player" parent="Entity_container" instance=ExtResource("3_kel1x")]
 position = Vector2(1014, 122)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1144.0
+offset_right = 1440.0
+offset_bottom = 214.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(0, 0, 0, 0.690196)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1157.5
+offset_top = 5.0
+offset_right = 1427.5
+offset_bottom = 172.0
+texture = ExtResource("9_4eer6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1143.75
+offset_top = 168.75
+offset_right = 1436.75
+offset_bottom = 205.75
+text = "Primer Piso"
+label_settings = SubResource("LabelSettings_31ih2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="1piso_patio_transition" type="Area2D" parent="."]
 position = Vector2(777, 396)
@@ -251,36 +281,6 @@ shape = SubResource("RectangleShape2D_r2l0h")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactions/Baño"]
 position = Vector2(1768, 8)
 shape = SubResource("RectangleShape2D_r2l0h")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-scale = Vector2(0.8, 0.8)
-transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 1144.0
-offset_right = 1440.0
-offset_bottom = 214.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-color = Color(0, 0, 0, 0.690196)
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 1157.5
-offset_top = 5.0
-offset_right = 1427.5
-offset_bottom = 172.0
-texture = ExtResource("9_4eer6")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1143.75
-offset_top = 168.75
-offset_right = 1436.75
-offset_bottom = 205.75
-text = "Primer Piso"
-label_settings = SubResource("LabelSettings_31ih2")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="body_entered" from="1piso_patio_transition" to="." method="_on_piso_patio_transition_body_entered"]
 [connection signal="body_exited" from="1piso_patio_transition" to="." method="_on_piso_patio_transition_body_exited"]
