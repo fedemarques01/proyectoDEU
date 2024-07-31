@@ -1,11 +1,11 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer/CanvasLayer/Label.text = global.current_scene.replace("_"," ")
+func _ready(): #tomo el nombre desde current_scene, lo edito para que sea legible
+	var zoneName =  global.current_scene.replace("_"," ")
+	zoneName =  zoneName.replace("facu","facultad")
+	zoneName =  zoneName.replace("1","superior")
+	zoneName =  zoneName.replace("2","inferior")
+	
+	#cargo el label e inicio la animacion
+	$AnimationPlayer/CanvasLayer/Label.text = zoneName
 	$AnimationPlayer.play("fade")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/interactions/InteractionManager.gd" id="1_am56r"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_xgej8"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_crk32"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emtbm"]
-texture = SubResource("CanvasTexture_xgej8")
+texture = SubResource("CanvasTexture_crk32")
 modulate_color = Color(0.0764462, 0.091445, 0.0914458, 0.611765)
 
 [node name="InteractionManager" type="Node2D"]

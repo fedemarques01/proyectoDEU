@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://djwifje6qstpc"]
+[gd_scene load_steps=6 format=3 uid="uid://djwifje6qstpc"]
 
 [ext_resource type="Script" path="res://scripts/ZoneLabel.gd" id="1_27uhg"]
 
@@ -36,6 +36,12 @@ _data = {
 "fade": SubResource("Animation_dpkx6")
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_xgej8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pg1y4"]
+texture = SubResource("CanvasTexture_xgej8")
+modulate_color = Color(0.0764462, 0.091445, 0.0914458, 0.611765)
+
 [node name="ZoneLabel" type="Node2D"]
 script = ExtResource("1_27uhg")
 
@@ -49,29 +55,86 @@ offset = Vector2(0, -6.0612)
 transform = Transform2D(1, 0, 0, 1, 0, -6.0612)
 
 [node name="Label" type="Label" parent="AnimationPlayer/CanvasLayer"]
+z_as_relative = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -27.0
-offset_right = 29.0
-offset_bottom = -4.0
+offset_left = -201.0
+offset_top = -97.0
+offset_right = 203.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(0.886262, 0.886261, 0.886262, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_pg1y4")
+text = "Planta baja pasillo superior"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/CanvasLayer"]
+[node name="Marco_improvizado" type="Control" parent="AnimationPlayer/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Linea_estetica" type="ColorRect" parent="AnimationPlayer/CanvasLayer/Marco_improvizado"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.0
-offset_top = -1.5
-offset_right = 157.0
-offset_bottom = 1.5
+offset_left = 356.0
+offset_top = 299.0
+offset_right = 761.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Linea_estetica2" type="ColorRect" parent="AnimationPlayer/CanvasLayer/Marco_improvizado"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 357.0
+offset_top = 207.0
+offset_right = 760.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Linea_estetica3" type="ColorRect" parent="AnimationPlayer/CanvasLayer/Marco_improvizado"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 356.0
+offset_top = 207.0
+offset_right = 359.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Linea_estetica4" type="ColorRect" parent="AnimationPlayer/CanvasLayer/Marco_improvizado"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 758.0
+offset_top = 207.061
+offset_right = 761.0
+offset_bottom = 300.061
 grow_horizontal = 2
 grow_vertical = 2
