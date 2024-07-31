@@ -22,6 +22,10 @@ func _process(delta):
 		if not label.visible:
 			_sort_active_areas_by_distance()
 			label.text = base_text + active_areas[0].action_name
+			#cambio el texto de "<boton> por la tecla asignada para interactuar"
+			var interactButton = InputMap.action_get_events("interact").pop_at(0).as_text().trim_suffix(" (Physical)")
+			label.text = label.text.replace("<boton>", interactButton)
+			
 		
 			#label.global_position = active_areas[0].global_position
 			#label.global_position.y -= 36
