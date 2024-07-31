@@ -230,7 +230,7 @@ shape = SubResource("RectangleShape2D_jl052")
 
 [node name="Lifia" type="Area2D" parent="Interactions"]
 script = ExtResource("6_e3o13")
-action_name = "Lifia"
+action_name = "Laboratorio de Investigación y Formación en Informática Avanzada (Lifia)"
 
 [node name="Icon" parent="Interactions/Lifia" instance=ExtResource("9_dyesb")]
 position = Vector2(282, 99)

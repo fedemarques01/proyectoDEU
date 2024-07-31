@@ -36,10 +36,10 @@ _data = {
 "fade": SubResource("Animation_dpkx6")
 }
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_xgej8"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_bwfln"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pg1y4"]
-texture = SubResource("CanvasTexture_xgej8")
+texture = SubResource("CanvasTexture_bwfln")
 modulate_color = Color(0.0764462, 0.091445, 0.0914458, 0.611765)
 
 [node name="ZoneLabel" type="Node2D"]

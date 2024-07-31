@@ -125,7 +125,7 @@ shape = SubResource("RectangleShape2D_378hy")
 
 [node name="Lidi" type="Area2D" parent="Interactions"]
 script = ExtResource("4_0na37")
-action_name = "Lidi"
+action_name = "Instituto de Investigación en Informática (LIDI)"
 
 [node name="Icon" parent="Interactions/Lidi" instance=ExtResource("7_j66pv")]
 position = Vector2(1066, 96)
@@ -136,7 +136,7 @@ shape = SubResource("RectangleShape2D_p82s6")
 
 [node name="Linti" type="Area2D" parent="Interactions"]
 script = ExtResource("4_0na37")
-action_name = "Linti"
+action_name = "Laboratorio de Investigacion en Nuevas Tecnologias Informaticas (Linti) "
 
 [node name="Icon" parent="Interactions/Linti" instance=ExtResource("7_j66pv")]
 position = Vector2(1825, 127)

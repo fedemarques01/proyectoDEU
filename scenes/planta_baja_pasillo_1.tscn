@@ -246,7 +246,7 @@ shape = SubResource("RectangleShape2D_2f5wp")
 
 [node name="Cefi" type="Area2D" parent="Interactions"]
 script = ExtResource("6_f7j7l")
-action_name = "Cefi"
+action_name = "Centro de Estudiantes de la Facultad de Informática (CEFI)"
 
 [node name="Icon" parent="Interactions/Cefi" instance=ExtResource("7_1crvj")]
 position = Vector2(232, 89)
