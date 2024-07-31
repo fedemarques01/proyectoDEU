@@ -199,7 +199,7 @@ script = ExtResource("8_182xs")
 
 [node name="Biblioteca" type="Area2D" parent="Interactions/Biblioteca"]
 script = ExtResource("5_uqsi1")
-action_name = "Biblioteca: Ver horario de atencion"
+action_name = "Biblioteca: Presiona <boton> para ver horario de atencion"
 
 [node name="Icon" parent="Interactions/Biblioteca/Biblioteca" instance=ExtResource("8_7dm6l")]
 position = Vector2(76, 290)

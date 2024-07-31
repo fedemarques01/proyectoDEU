@@ -134,7 +134,7 @@ script = ExtResource("6_03qwm")
 
 [node name="Ventana_alumnos" type="Area2D" parent="Interactions/Ventana de Alumnos"]
 script = ExtResource("6_hm08g")
-action_name = "Alumnos: Ver horario de atencion"
+action_name = "Alumnos: Presiona <boton> para ver horario de atencion"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Ventana de Alumnos/Ventana_alumnos"]
 position = Vector2(1909.75, 170)

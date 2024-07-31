@@ -143,7 +143,7 @@ script = ExtResource("5_tk43t")
 
 [node name="Buffet" type="Area2D" parent="Interactions/Horarios_del_buffet"]
 script = ExtResource("5_vbo6q")
-action_name = "Buffet: Ver horario de atencion"
+action_name = "Buffet: Presiona <boton> para ver horario de atencion"
 
 [node name="Icon" parent="Interactions/Horarios_del_buffet/Buffet" instance=ExtResource("6_trb2n")]
 position = Vector2(432, 427)
