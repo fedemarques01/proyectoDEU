@@ -1,5 +1,7 @@
 extends Control
 
+@onready var speed_slider = $CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2/speed_slider
+@onready var speed_label = $CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2/speed_label
 @onready var controls_button = $CenterContainer/Panel/VBoxContainer/controls_button
 @onready var music_toggle_button = $CenterContainer/Panel/VBoxContainer/VBoxContainer/music_toggle_button
 @onready var tts_toggle_button = $CenterContainer/Panel/VBoxContainer/VBoxContainer/tts_toggle_button
@@ -13,11 +15,16 @@ extends Control
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
-	controls_button.grab_focus()  # Set initial focus to the first button
+	tts_toggle_button.grab_focus()  
 	_setup_layout()
 	_populate_dropdowns()
 	_update_music_slider_status()
+	speed_slider.value = global.get_speed()
+	speed_slider.connect("value_changed", Callable(self, "_on_speed_slider_value_changed"))
 
+func _on_speed_slider_value_changed(value):
+	global.set_speed(value)
+	
 func _setup_layout():
 	volume_slider.value = 20
 	$CenterContainer/Panel.custom_minimum_size = Vector2(400, 300) 

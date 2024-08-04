@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-const SPEED = 400.0
 var current_dir = "none"
 
 func player():
@@ -21,23 +20,23 @@ func player_movement(delta): #movimientos del jugador
 	if Input.is_action_pressed("move_right"):
 		play_anim(1)
 		current_dir = "right"
-		velocity.x = SPEED
+		velocity.x = global.get_speed()
 		velocity.y = 0
 	elif Input.is_action_pressed("move_left"):
 		play_anim(1)
 		current_dir = "left"
-		velocity.x = -SPEED
+		velocity.x = - global.get_speed()
 		velocity.y = 0
 	elif Input.is_action_pressed("move_up"):
 		play_anim(1)
 		current_dir = "up"
 		velocity.x = 0
-		velocity.y = -SPEED
+		velocity.y = -  global.get_speed()
 	elif Input.is_action_pressed("move_down"):
 		play_anim(1)
 		current_dir = "down"
 		velocity.x = 0
-		velocity.y = SPEED
+		velocity.y =  global.get_speed()
 	else:
 		play_anim(0)
 		velocity.x = 0

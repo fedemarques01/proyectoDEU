@@ -90,8 +90,21 @@ layout_mode = 2
 layout_mode = 2
 theme = SubResource("Theme_1w8e6")
 theme_type_variation = &"HeaderSmall"
-text = "Opciones de texto
+text = "Opciones generales
 "
+
+[node name="VSplitContainer2" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_cjhkp")
+
+[node name="speed_label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Velocidad de jugador"
+
+[node name="speed_slider" type="HSlider" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
 
 [node name="HSplitContainer" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -128,6 +141,7 @@ text = "Volver"
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/choose_voice_dropdown" to="." method="_on_choose_voice_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/music_toggle_button" to="." method="_on_music_toggle_button_pressed"]
 [connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/VSplitContainer/volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2/speed_slider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer/font_size_dropdown" to="." method="_on_font_size_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer2/font_color_picker_button" to="." method="_on_font_color_picker_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]

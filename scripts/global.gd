@@ -11,6 +11,7 @@ var font_color: Color = Color.WHITE
 #(311, 619) position default for "entrada_facu" start
 var player_transition_posx = 311
 var player_transition_posy = 619
+var SPEED = 400.0
 
 var pause_menu
 # TTS variables
@@ -25,7 +26,12 @@ func _ready():
 	get_tree().root.call_deferred("add_child", pause_menu) 
 	pause_menu.process_mode = ProcessMode.PROCESS_MODE_ALWAYS
 	pause_menu.hide() 
-	
+
+func get_speed():
+	return SPEED
+func set_speed(speed):
+	SPEED = speed
+
 func speak(text: String):
 	if tts_enabled:
 		DisplayServer.tts_speak(text, voice_id)
