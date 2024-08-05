@@ -55,12 +55,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../back_button")
 theme = SubResource("Theme_tejoy")
 theme_type_variation = &"HeaderSmall"
 text = "Opciones de sonido"
 
 [node name="tts_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../back_button")
 text = "Habilitar TTS"
 
 [node name="choose_voice_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
@@ -105,6 +107,15 @@ text = "Velocidad de jugador"
 [node name="speed_slider" type="HSlider" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2"]
 layout_mode = 2
 size_flags_vertical = 4
+min_value = 100.0
+max_value = 800.0
+step = 8.0
+value = 400.0
+ticks_on_borders = true
+
+[node name="speed_reset" type="Button" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Resetear velocidad"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -135,13 +146,15 @@ text = "Cambiar controles"
 
 [node name="back_button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../VBoxContainer/Label")
 text = "Volver"
 
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/tts_toggle_button" to="." method="_on_tts_toggle_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/choose_voice_dropdown" to="." method="_on_choose_voice_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/music_toggle_button" to="." method="_on_music_toggle_button_pressed"]
 [connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/VSplitContainer/volume_slider" to="." method="_on_volume_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2/speed_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2/speed_slider" to="." method="_on_speed_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/speed_reset" to="." method="_on_reset_speed_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer/font_size_dropdown" to="." method="_on_font_size_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer2/font_color_picker_button" to="." method="_on_font_color_picker_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]
