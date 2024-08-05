@@ -21,7 +21,7 @@ var default_input_mappings = {
 	"move_down": KEY_S,
 	"move_left": KEY_A,
 	"move_right": KEY_D,
-	"interact": KEY_E,
+	"interact": KEY_ENTER,
 }
 
 var input_actions = {
@@ -120,8 +120,8 @@ func _input(event):
 			(event is InputEventMouseButton and event.pressed) or
 			(event is InputEventJoypadButton and event.pressed)
 		):
-			if event is InputEventMouseButton and event.doubleclick:
-				event.doubleclick = false
+			#if event is InputEventMouseButton and event.doubleclick:
+				#event.doubleclick = false
 
 			if not _is_duplicate(event):
 				InputMap.action_erase_events(action_to_remap)
