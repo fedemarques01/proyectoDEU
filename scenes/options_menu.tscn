@@ -55,12 +55,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../back_button")
 theme = SubResource("Theme_tejoy")
 theme_type_variation = &"HeaderSmall"
 text = "Opciones de sonido"
 
 [node name="tts_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../back_button")
 text = "Habilitar TTS"
 
 [node name="choose_voice_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
@@ -144,6 +146,7 @@ text = "Cambiar controles"
 
 [node name="back_button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../VBoxContainer/Label")
 text = "Volver"
 
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/tts_toggle_button" to="." method="_on_tts_toggle_button_pressed"]
