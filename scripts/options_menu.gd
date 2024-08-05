@@ -23,7 +23,7 @@ func _ready():
 	_update_music_slider_status()
 	global.load_speed()
 	speed_slider.value = global.get_speed()
-
+	
 func _apply_control_properties(controls: Array):
 	for control in controls:
 		control.custom_minimum_size = Vector2(350, 50)
@@ -73,10 +73,10 @@ func _on_reset_speed_button_pressed():
 	
 func _on_tts_toggle_button_pressed():
 	if global.tts_enabled:
-		tts_toggle_button.text = "TTS habilitado"
+		tts_toggle_button.text = "Habilitar TTS" 
 		global.tts_enabled = false
 	else:
-		tts_toggle_button.text = "Habilitar TTS"
+		tts_toggle_button.text = "TTS habilitado"
 		global.tts_enabled = true
 		global.speak("Usted ha habilitado el TTS")
 		
