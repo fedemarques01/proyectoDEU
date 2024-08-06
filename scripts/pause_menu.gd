@@ -39,9 +39,15 @@ func _on_options_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 func _on_map_button_pressed():
+	get_tree().paused = false
 	print("Mostrar un mapa de la facu")
 	hide()
 	pass
+
+func _on_tutorial_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/tutorial_screen.tscn")
+	hide()
 
 func _on_quit_button_pressed():
 	get_tree().quit()
@@ -49,5 +55,4 @@ func _on_quit_button_pressed():
 func show_menu():
 	get_tree().paused = true
 	show()
-
 
