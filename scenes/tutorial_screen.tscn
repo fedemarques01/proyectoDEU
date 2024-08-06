@@ -453,7 +453,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Tutorial Container/HSplitContainer/VBoxContainer"]
-position = Vector2(274, 244)
+position = Vector2(262, 248)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_5fhr1")
 frame_progress = 0.931825
@@ -472,7 +472,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Tutorial Container/HSplitContainer/VBoxContainer2"]
-position = Vector2(283, 246)
+position = Vector2(287, 241)
 scale = Vector2(0.713, 0.713)
 sprite_frames = SubResource("SpriteFrames_ibw76")
 frame_progress = 0.297565
