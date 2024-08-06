@@ -21,8 +21,10 @@ func _ready():
 	_setup_layout()
 	_populate_dropdowns()
 	_update_music_slider_status()
-	global.load_speed()
+	global.load_settings()
 	speed_slider.value = global.get_speed()
+	tts_toggle_button.button_pressed = global.get_tts_enabled()
+	tts_toggle_button.text = "Deshabilitar TTS" if global.get_tts_enabled() else "Habilitar TTS"
 	
 func _apply_control_properties(controls: Array):
 	for control in controls:
@@ -59,7 +61,6 @@ func _on_music_toggle_button_pressed():
 	if MusicPlayer.is_music_playing():
 		music_toggle_button.text = "Habilitar musica"
 		MusicPlayer.stop_music()
-		
 	else:
 		music_toggle_button.text = "Musica habilitada"
 		MusicPlayer.play_music()
@@ -72,12 +73,13 @@ func _on_reset_speed_button_pressed():
 	speed_slider.value = global.initial_speed 
 	
 func _on_tts_toggle_button_pressed():
-	if global.tts_enabled:
-		tts_toggle_button.text = "Habilitar TTS" 
-		global.tts_enabled = false
+	if global.get_tts_enabled():
+		global.set_tts_enabled(false)
+		tts_toggle_button.text = "Habilitar TTS"
 	else:
-		tts_toggle_button.text = "TTS habilitado"
-		global.tts_enabled = true
+		global.set_tts_enabled(true)
+		tts_toggle_button.text = "Deshabilitar TTS"
+		
 		global.speak("Usted ha habilitado el TTS")
 		
 func _on_choose_voice_dropdown_selected(index):

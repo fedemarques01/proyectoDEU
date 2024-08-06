@@ -21,7 +21,7 @@ var SPEED: float = initial_speed
 
 var pause_menu
 # TTS variables
-var tts_enabled = false
+var TTS_ENABLED = false
 var voices = DisplayServer.tts_get_voices_for_language("es")
 var voice_id = voices[0]
 
@@ -32,7 +32,7 @@ func _ready():
 	get_tree().root.call_deferred("add_child", pause_menu) 
 	pause_menu.process_mode = ProcessMode.PROCESS_MODE_ALWAYS
 	pause_menu.hide() 
-	load_speed()
+	load_settings()
 
 func get_speed() -> float:
 	return SPEED
@@ -41,20 +41,36 @@ func set_speed(speed: float):
 	save_speed()
 func reset_speed():
 	SPEED = self.initial_speed
-func load_speed():
+
+func load_settings():
 	var config = ConfigFile.new()
 	var err = config.load(CONFIG_PATH)
 	if err == OK:
 		SPEED = config.get_value("player", "speed", initial_speed)
+		TTS_ENABLED = config.get_value("settings", "tts_enabled", false)
 	else:
 		SPEED = initial_speed
+		TTS_ENABLED = false
+
 func save_speed():
 	var config = ConfigFile.new()
 	config.set_value("player", "speed", SPEED)
 	config.save(CONFIG_PATH)
+
+func set_tts_enabled(enabled: bool):
+	TTS_ENABLED = enabled
+	save_tts()
+
+func get_tts_enabled() -> bool:
+	return TTS_ENABLED
+
+func save_tts():
+	var config = ConfigFile.new()
+	config.set_value("settings", "tts_enabled", TTS_ENABLED)
+	config.save(CONFIG_PATH)
 	
 func speak(text: String):
-	if tts_enabled:
+	if get_tts_enabled():
 		DisplayServer.tts_speak(text, voice_id)
 
 func test_start():
