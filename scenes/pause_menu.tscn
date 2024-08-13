@@ -36,13 +36,9 @@ text = "Volver al Juego"
 icon_alignment = 1
 language = "es_AR"
 
-[node name="map_button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Ver Mapa"
-
 [node name="tutorial_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Ver tutorial"
+text = "Ver Tutorial"
 
 [node name="options_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -54,7 +50,6 @@ focus_neighbor_bottom = NodePath("../return_button")
 text = "Salir"
 
 [connection signal="pressed" from="VBoxContainer/return_button" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/map_button" to="." method="_on_map_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

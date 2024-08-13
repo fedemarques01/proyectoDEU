@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c14mvj0aw5h3t"]
+[gd_scene load_steps=3 format=3 uid="uid://c14mvj0aw5h3t"]
 
 [ext_resource type="Script" path="res://scenes/interactions/InteractionManager.gd" id="1_am56r"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_crk32"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emtbm"]
-texture = SubResource("CanvasTexture_crk32")
-modulate_color = Color(0.0764462, 0.091445, 0.0914458, 0.611765)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0eoew"]
+bg_color = Color(0.191381, 0.200125, 0.200125, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_am56r")
@@ -30,6 +36,6 @@ size_flags_vertical = 0
 theme_type_variation = &"HeaderMedium"
 theme_override_colors/font_color = Color(0.886262, 0.886261, 0.886262, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxTexture_emtbm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0eoew")
 horizontal_alignment = 1
 vertical_alignment = 1

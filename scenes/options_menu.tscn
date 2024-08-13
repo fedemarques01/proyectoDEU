@@ -63,7 +63,7 @@ text = "Opciones de sonido"
 [node name="tts_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../../back_button")
-text = "Habilitar TTS"
+text = "Habilitar Texto a voz"
 
 [node name="choose_voice_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -110,7 +110,7 @@ size_flags_vertical = 4
 min_value = 100.0
 max_value = 800.0
 step = 8.0
-value = 400.0
+value = 404.0
 ticks_on_borders = true
 
 [node name="speed_reset" type="Button" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]

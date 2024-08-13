@@ -75,10 +75,10 @@ func _on_reset_speed_button_pressed():
 func _on_tts_toggle_button_pressed():
 	if global.get_tts_enabled():
 		global.set_tts_enabled(false)
-		tts_toggle_button.text = "Habilitar TTS"
+		tts_toggle_button.text = "Habilitar Texto a voz"
 	else:
 		global.set_tts_enabled(true)
-		tts_toggle_button.text = "Deshabilitar TTS"
+		tts_toggle_button.text = "Deshabilitar Texto a voz"
 		
 		global.speak("Usted ha habilitado el TTS")
 		
