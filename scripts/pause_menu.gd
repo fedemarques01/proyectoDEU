@@ -14,6 +14,7 @@ func _ready():
 
 func _resize_buttons():
 	$VBoxContainer.custom_minimum_size = Vector2(300, 400)
+	$Panel.custom_minimum_size = Vector2(350, 325)
 	$VBoxContainer/return_button.custom_minimum_size = Vector2(200, 50)
 	$VBoxContainer/options_button.custom_minimum_size = Vector2(200, 50)
 	$VBoxContainer/tutorial_button.custom_minimum_size = Vector2(200, 50)
