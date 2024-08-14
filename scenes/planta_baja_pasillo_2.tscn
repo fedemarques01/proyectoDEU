@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://clvnfqsvye4pl"]
+[gd_scene load_steps=16 format=3 uid="uid://clvnfqsvye4pl"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_n5ajw"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_2.gd" id="1_vkjf8"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/ventana_alumnos.gd" id="6_03qwm"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="6_hm08g"]
 [ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="8_bif5d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o36ji"]
 
 [sub_resource type="FontFile" id="FontFile_b37yi"]
 cache/0/27/0/ascent = 0.0
@@ -72,27 +74,40 @@ position = Vector2(1531, 129)
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 1144.0
-offset_right = 1440.0
-offset_bottom = 247.0
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.99
+anchor_right = 1.249
+anchor_bottom = 0.335
+offset_left = -0.480103
+offset_top = 4.0
+offset_right = 0.151855
+offset_bottom = -0.0800018
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_o36ji")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Panel"]
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 300.0
+offset_bottom = 243.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0, 0, 0, 0.690196)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 1152.5
-offset_top = 2.5
-offset_right = 1422.5
-offset_bottom = 169.5
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+offset_left = 12.5
+offset_top = -1.5
+offset_right = 282.5
+offset_bottom = 165.5
 texture = ExtResource("4_hye1b")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1143.75
-offset_top = 168.75
-offset_right = 1436.75
-offset_bottom = 205.75
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 3.75
+offset_top = 164.75
+offset_right = 296.75
+offset_bottom = 241.75
 text = "Planta Baja - Pasillo Inferior"
 label_settings = SubResource("LabelSettings_cnjl0")
 horizontal_alignment = 1

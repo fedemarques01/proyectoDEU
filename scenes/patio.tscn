@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=16 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
 [ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_vbo6q"]
 [ext_resource type="Texture2D" uid="uid://bv177t1f12ud1" path="res://art/Minimap_assets/patio.png" id="6_5pflx"]
 [ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="6_trb2n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5jbm"]
 
 [sub_resource type="FontFile" id="FontFile_frv7b"]
 subpixel_positioning = 0
@@ -80,27 +82,43 @@ position = Vector2(926, 608)
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 1144.0
-offset_right = 1440.0
-offset_bottom = 214.0
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.99
+anchor_right = 1.249
+anchor_bottom = 0.335
+offset_left = -0.480103
+offset_top = 4.0
+offset_right = 0.151855
+offset_bottom = -0.0800018
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_d5jbm")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 300.0
+offset_bottom = 210.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0, 0, 0, 0.690196)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 1157.5
-offset_top = 5.0
-offset_right = 1427.5
-offset_bottom = 172.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 17.5
+offset_top = 1.0
+offset_right = 287.5
+offset_bottom = 168.0
 texture = ExtResource("6_5pflx")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1143.75
-offset_top = 168.75
-offset_right = 1436.75
-offset_bottom = 205.75
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 3.75
+offset_top = 164.75
+offset_right = 296.75
+offset_bottom = 201.75
 text = "Planta Baja - Patio"
 label_settings = SubResource("LabelSettings_p3fmn")
 horizontal_alignment = 1

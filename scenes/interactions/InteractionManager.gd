@@ -17,7 +17,7 @@ func unregister_area(area: InteractionArea):
 	if index != -1:
 		active_areas.remove_at(index)
 
-func _process(delta):
+func _process(_delta):
 	if active_areas.size() > 0 && can_interact:
 		if not label.visible:
 			_sort_active_areas_by_distance()

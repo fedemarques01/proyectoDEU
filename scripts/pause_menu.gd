@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var return_button = $VBoxContainer/return_button
-@onready var map_button = $VBoxContainer/map_button
+@onready var tutorial_button = $VBoxContainer/tutorial_button
 @onready var options_button = $VBoxContainer/options_button
 @onready var quit_button = $VBoxContainer/quit_button
 
