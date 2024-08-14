@@ -108,7 +108,7 @@ anchor_bottom = 0.335
 offset_left = -0.480103
 offset_top = 4.0
 offset_right = 0.151855
-offset_bottom = -0.0800018
+offset_bottom = 4.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_4u0tx")
 
@@ -119,7 +119,7 @@ offset_right = 300.0
 offset_bottom = 212.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-color = Color(0.259294, 0.259294, 0.259294, 0.690196)
+color = Color(0.117647, 0.117647, 0.117647, 0.784314)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
 z_index = 1

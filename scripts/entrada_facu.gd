@@ -2,12 +2,12 @@ extends Node2D
 
 var pause_menu
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Entity_container/player.position.x = global.player_transition_posx
 	$Entity_container/player.position.y = global.player_transition_posy
 	
-	$CanvasLayer/Panel.custom_minimum_size = Vector2(1000000000,10000000000000)
 	#prelodea el menu de pausa
 	var pause_menu_scene = preload("res://scenes/pause_menu.tscn")
 	pause_menu = pause_menu_scene.instantiate()
@@ -21,7 +21,7 @@ func _input(event): #espera el input para pausar
 		global.toggle_pause()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	change_scene()
 
 

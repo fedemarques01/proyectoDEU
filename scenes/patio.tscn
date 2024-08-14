@@ -102,7 +102,7 @@ offset_right = 300.0
 offset_bottom = 210.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-color = Color(0, 0, 0, 0.690196)
+color = Color(0.117647, 0.117647, 0.117647, 0.784314)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
 layout_mode = 0
