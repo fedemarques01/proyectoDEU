@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://doxih0j1xv67e"]
+[gd_scene load_steps=15 format=3 uid="uid://doxih0j1xv67e"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_muo3p"]
 [ext_resource type="Script" path="res://scripts/planta_baja_pasillo_1.gd" id="1_rswto"]
@@ -9,27 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="7_1crvj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4gxeb"]
-
-[sub_resource type="FontFile" id="FontFile_5ynkw"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_uk4uf"]
-font = SubResource("FontFile_5ynkw")
-font_size = 27
-outline_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrmw0"]
 size = Vector2(115, 99.25)
@@ -116,8 +95,8 @@ offset_left = 3.75
 offset_top = 164.75
 offset_right = 296.75
 offset_bottom = 241.75
+theme_override_font_sizes/font_size = 28
 text = "Planta Baja - Pasillo Superior"
-label_settings = SubResource("LabelSettings_uk4uf")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

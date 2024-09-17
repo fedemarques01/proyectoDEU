@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://cb46wwulg4c11"]
+[gd_scene load_steps=19 format=3 uid="uid://cb46wwulg4c11"]
 
 [ext_resource type="Script" path="res://scripts/entrada_facu.gd" id="1_tbg8m"]
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_washd"]
 [ext_resource type="PackedScene" uid="uid://5anhx7il2irw" path="res://scenes/player.gd.tscn" id="2_6c82k"]
-[ext_resource type="Texture2D" uid="uid://d3h0kcqaax0h6" path="res://art/Minimap_assets/a.png" id="4_e7dli"]
+[ext_resource type="Texture2D" uid="uid://ru2grgpbjr7o" path="res://art/Minimap_assets/entrada.png" id="4_e7dli"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/mirar_mapa.gd" id="5_o38ge"]
 [ext_resource type="Script" path="res://scenes/interactions/interaction area/interaction_area.gd" id="5_uqsi1"]
 [ext_resource type="PackedScene" uid="uid://c14mvj0aw5h3t" path="res://scenes/interactions/InteractionManager.tscn" id="7_yv2li"]
@@ -11,27 +11,6 @@
 [ext_resource type="Script" path="res://scenes/interactions/interaction action/horario_biblioteca.gd" id="8_182xs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4u0tx"]
-
-[sub_resource type="FontFile" id="FontFile_ry8as"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_0cnd7"]
-font = SubResource("FontFile_ry8as")
-font_size = 27
-outline_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vti4"]
 size = Vector2(58, 83)
@@ -138,8 +117,8 @@ offset_left = 3.75
 offset_top = 164.75
 offset_right = 296.75
 offset_bottom = 201.75
+theme_override_font_sizes/font_size = 28
 text = "Planta Baja - Entrada"
-label_settings = SubResource("LabelSettings_0cnd7")
 horizontal_alignment = 1
 vertical_alignment = 1
 

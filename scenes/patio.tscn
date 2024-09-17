@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b67xo7fy30bs0"]
+[gd_scene load_steps=14 format=3 uid="uid://b67xo7fy30bs0"]
 
 [ext_resource type="TileSet" uid="uid://dx11db5rljvq" path="res://art/tilesets/entrada_facu.tres" id="1_cgmb4"]
 [ext_resource type="Script" path="res://scripts/patio.gd" id="1_mygvj"]
@@ -9,30 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dlq81h3fssrih" path="res://art/icons/icon.tscn" id="6_trb2n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5jbm"]
-
-[sub_resource type="FontFile" id="FontFile_frv7b"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/27/0 = Vector2(0, 0)
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/27/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/27/0/kerning_overrides/27/0 = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_p3fmn"]
-font = SubResource("FontFile_frv7b")
-font_size = 27
-outline_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28p1q"]
 size = Vector2(167.938, 61.2655)
@@ -119,8 +95,8 @@ offset_left = 3.75
 offset_top = 164.75
 offset_right = 296.75
 offset_bottom = 201.75
+theme_override_font_sizes/font_size = 28
 text = "Planta Baja - Patio"
-label_settings = SubResource("LabelSettings_p3fmn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
