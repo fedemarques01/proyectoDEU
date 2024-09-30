@@ -1,20 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwme2scx3x4tx"]
+[gd_scene load_steps=6 format=3 uid="uid://cwme2scx3x4tx"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ruuug"]
+[ext_resource type="Texture2D" uid="uid://kpspit0f86vr" path="res://art/background/facu.jpg" id="2_5tkmi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sstay"]
 
 [sub_resource type="Theme" id="Theme_y8kft"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_insi3"]
+
 [node name="main_menu" type="Control"]
 z_as_relative = false
 material = SubResource("ShaderMaterial_sstay")
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 5.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Menu principal"
@@ -22,6 +27,28 @@ mouse_default_cursor_shape = 2
 theme = SubResource("Theme_y8kft")
 script = ExtResource("1_ruuug")
 metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5tkmi")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_insi3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.0235294, 0.027451, 0.454902)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -44,6 +71,7 @@ text = "Menu Principal"
 horizontal_alignment = 1
 
 [node name="start_button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../quit_button")
 mouse_default_cursor_shape = 2
@@ -66,3 +94,8 @@ text = "Opciones"
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../start_button")
 text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/tutorial_button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

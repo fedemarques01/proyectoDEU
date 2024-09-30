@@ -1,7 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://5anhx7il2irw"]
+[gd_scene load_steps=43 format=3 uid="uid://5anhx7il2irw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uaxqb"]
 [ext_resource type="Texture2D" uid="uid://c8akyrglba21q" path="res://art/character/player.png" id="2_0shyb"]
+[ext_resource type="Script" path="res://scripts/CameraFix.gd" id="3_bfyof"]
+[ext_resource type="PackedScene" uid="uid://djwifje6qstpc" path="res://scenes/ZoneLabel.tscn" id="4_ve8dj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhecx"]
 atlas = ExtResource("2_0shyb")
@@ -318,17 +320,19 @@ limit_right = 650
 limit_bottom = 733
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_bfyof")
 
 [node name="Camera2D_planta_baja_pasillo_1" type="Camera2D" parent="Cameras"]
 position = Vector2(0, -18)
 enabled = false
 zoom = Vector2(2, 2)
 limit_left = 160
-limit_top = -65
+limit_top = -195
 limit_right = 2150
 limit_bottom = 316
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_bfyof")
 
 [node name="Camera2D_planta_baja_pasillo_2" type="Camera2D" parent="Cameras"]
 position = Vector2(0, -36)
@@ -340,14 +344,36 @@ limit_right = 2110
 limit_bottom = 370
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_bfyof")
 
 [node name="Camera2D_patio" type="Camera2D" parent="Cameras"]
 position = Vector2(10, 84)
 enabled = false
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = -40
 limit_top = -30
 limit_right = 1560
-limit_bottom = 980
+limit_bottom = 990
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_bfyof")
+
+[node name="Camera2D_primer_piso" type="Camera2D" parent="Cameras"]
+enabled = false
+zoom = Vector2(2.2, 2.2)
+limit_left = 10
+limit_top = -221
+limit_right = 1920
+limit_bottom = 912
+script = ExtResource("3_bfyof")
+
+[node name="Camera2D_segundo_piso" type="Camera2D" parent="Cameras"]
+enabled = false
+zoom = Vector2(2, 2)
+limit_left = -70
+limit_top = -160
+limit_right = 1920
+limit_bottom = 914
+script = ExtResource("3_bfyof")
+
+[node name="ZoneLabel" parent="." instance=ExtResource("4_ve8dj")]

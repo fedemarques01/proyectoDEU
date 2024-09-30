@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlq81h3fssrih"]
+
+[ext_resource type="Texture2D" uid="uid://banym1u2h6g0t" path="res://art/icons/pixil-frame-0.png" id="1_ktjei"]
+[ext_resource type="Script" path="res://art/icons/icon.gd" id="2_nbafp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bojv7"]
+atlas = ExtResource("1_ktjei")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fy8t"]
+atlas = ExtResource("1_ktjei")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxupe"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_bojv7")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_0fy8t")
+}],
+"loop": true,
+"name": &"exclamation_mark",
+"speed": 5.0
+}]
+
+[node name="Icon" type="Node2D"]
+script = ExtResource("2_nbafp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_nxupe")
+animation = &"exclamation_mark"
+frame_progress = 0.23715

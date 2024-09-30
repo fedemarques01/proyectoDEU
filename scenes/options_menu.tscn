@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj4618fhjwwix"]
+
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_sxnsc"]
+
+[sub_resource type="Theme" id="Theme_vi6p0"]
+
+[sub_resource type="Theme" id="Theme_tejoy"]
+
+[sub_resource type="Theme" id="Theme_cjhkp"]
+
+[sub_resource type="Theme" id="Theme_1w8e6"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_sxnsc")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -128.5
+offset_right = 107.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="MarginContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+
+[node name="title_label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vi6p0")
+theme_type_variation = &"HeaderMedium"
+text = "Opciones de Juego"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../back_button")
+theme = SubResource("Theme_tejoy")
+theme_type_variation = &"HeaderSmall"
+text = "Opciones de sonido"
+
+[node name="tts_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../back_button")
+text = "Habilitar Texto a voz"
+
+[node name="choose_voice_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="music_toggle_button" type="CheckButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Habilitar musica"
+
+[node name="VSplitContainer" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_cjhkp")
+
+[node name="volume_label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Musica"
+
+[node name="volume_slider" type="HSlider" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="text_options" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_1w8e6")
+theme_type_variation = &"HeaderSmall"
+text = "Opciones generales
+"
+
+[node name="VSplitContainer2" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_cjhkp")
+
+[node name="speed_label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Velocidad de jugador"
+
+[node name="speed_slider" type="HSlider" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 100.0
+max_value = 800.0
+step = 8.0
+value = 404.0
+ticks_on_borders = true
+
+[node name="speed_reset" type="Button" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Resetear velocidad"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="font_size_label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer"]
+layout_mode = 2
+text = "Tamaño de texto"
+
+[node name="font_size_dropdown" type="OptionButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer2"]
+layout_mode = 2
+text = "Color de texto
+"
+
+[node name="font_color_picker_button" type="ColorPickerButton" parent="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer2"]
+layout_mode = 2
+text = "Elegir color de texto
+"
+
+[node name="controls_button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Cambiar controles"
+
+[node name="back_button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../VBoxContainer/Label")
+text = "Volver"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/tts_toggle_button" to="." method="_on_tts_toggle_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/choose_voice_dropdown" to="." method="_on_choose_voice_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/music_toggle_button" to="." method="_on_music_toggle_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer/VSplitContainer/volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/VSplitContainer2/speed_slider" to="." method="_on_speed_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/speed_reset" to="." method="_on_reset_speed_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer/font_size_dropdown" to="." method="_on_font_size_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/VBoxContainer2/HSplitContainer2/font_color_picker_button" to="." method="_on_font_color_picker_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
